@@ -1,0 +1,251 @@
+﻿body {
+    margin:0;
+    padding: 0;
+    font-family: Arial;
+}
+
+select { 
+    min-width: 200px;
+    border: solid 1px #c9c9c9;
+    border-radius: 3px;
+    padding: 5px;
+    font-size: 0.9em;
+}
+
+ul li { list-style: none;}
+
+a { color: #fff;}
+
+/****************** GRID STYLES ******************/
+
+.grid .row .columns {
+    background-color: #4db25c;
+}
+
+.columns {
+    float: left;
+    margin-left: 2.12766%;
+    min-height: 1px;
+    position: relative;
+}
+
+    .columns:first-child {
+        margin-left: 0;
+    }
+
+    .columns.twelve {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .columns.eleven {
+        width: 91.4895%;
+    }
+
+    .columns.ten {
+        width: 82.9789%;
+    }
+
+    .columns.nine {
+        width: 74.4682%;
+    }
+
+    .columns.eight {
+        width: 65.9576%;
+    }
+
+    .columns.seven {
+        width: 57.4469%
+    }
+
+    .columns.six {
+        width: 48.9362%;
+    }
+
+    .columns.five {
+        width: 40.4256%;
+    }
+
+    .columns.four {
+        width: 31.9149%
+    }
+
+    .columns.three {
+        width: 23.4043%;
+    }
+
+    .columns.two {
+        width: 14.8936%;
+    }
+
+    .columns.one {
+        width: 6.38299%;
+    }
+
+.row {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+    .row::before, .row::after, .clearfix::before, .clearfix::after {
+        content: "";
+        display: table;
+    }
+
+    .row::after, .clearfix::after {
+        clear: both;
+    }
+
+/****************** END GRID STYLES ******************/
+
+/****************** FRAMEWORK ******************/
+.hidden {display:none;}
+
+.mainContainer {
+
+}
+
+.header {
+    background-color: #489890;
+    color: #fff;
+    width: 100%;
+    padding: 10px;
+    border-bottom: solid 1px #fff;
+    font-size: 0.8em;
+    margin-bottom: 0;
+}
+
+.header ul {margin-top: 0;}
+
+.header .logoContainer { float: left; }
+.header .siteSelect { 
+    padding: 0 20px 0 30px;
+}
+
+.header .hintToggle { 
+    position: relative; 
+    display: inline-block;
+}
+
+.header .hintToggle ul li {
+    float:left;
+    padding:5px;
+}
+
+.header .hintToggle ul li a {
+    border: solid 2px #fff;
+    padding: 3px 10px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.header .hintToggle ul li a.on {
+    border-radius: 8px 0 0 8px;
+}
+
+.header .hintToggle ul li a.off {
+    border-radius: 0 8px 8px 0;
+}
+
+.header .hintToggle ul li a.selected {
+    background-color: #6D348D;
+    color: #6D348D;
+    cursor: default;
+}
+
+.header .links .profileIcon .profileMenu {
+    position: absolute;
+    right: 0;
+    top: 30px;
+    background-color: #489890;
+    border: solid 1px #fff;
+    margin: 0;
+    padding: 5px;
+}
+
+.header .links .profileIcon .profileMenu li { 
+    float: none; 
+    margin: 0 5px;
+    padding: 8px 0;
+    border-top: solid 1px #fff;
+}
+
+.header .links .profileIcon .profileMenu li:first-child {
+    border-top: none;
+}
+
+.header .links ul { 
+    float: right;
+}
+
+.header .links ul li {
+    float: left;
+    margin-left: 10px;
+}
+
+.mainMenu {
+    background-color: #489890;
+    color: #fff;
+    border-right: solid 1px #fff;
+    width: 80px;
+    font-size: 0.75em;
+    float: left;
+}
+
+.mainMenu ul {
+    margin: 0;
+    padding: 30px 0 0 0;
+}
+
+.mainMenu ul li {
+    list-style: none;
+    padding: 10px;
+}
+
+.mainMenu ul li.selected {
+    background-color: #9EC5C0;
+}
+
+.secondaryMenu {
+    background-color: #489890;
+    color: #fff;
+    width: 80px;
+    font-size: 0.75em;
+    float: left;
+}
+
+.rightOptions {
+    border-left: solid 2px #489890;
+    width: 250px;
+    font-size: 0.75em;
+    float: right;
+}
+
+.mainSection { 
+    overflow: hidden;
+    padding: 50px;
+}
+
+.mainSection .welcome {
+    text-align: center;
+}
+
+.mainSection .welcome h1{
+    font-size: 2.8em;
+}
+
+.mainSection .welcome h2 {
+    font-weight: normal;
+}
+
+.mainSection .welcome p.siteName {
+    font-size: 3em;
+}
+
+.mainSection .welcome p {
+    line-height: 1.4em;
+}
+
+/****************** END FRAMEWORK ******************/
+
+/** http://paletton.com/#uid=75A0u0kleqtbzEKgVuIpcmGtdhZ **/

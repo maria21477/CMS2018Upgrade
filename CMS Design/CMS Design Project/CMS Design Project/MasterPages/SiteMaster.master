@@ -1,0 +1,53 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="SiteMaster.master.cs" Inherits="MasterPages_SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>CMS Design Project</title>
+    <link href="../Styles/MainStyles.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="../Scripts/jquery-1.12.0.min.js"></script>
+    <script type="text/javascript" src="../Scripts/functions.js"></script>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div class="mainContainer">
+        <div class="header row">
+            <div class="logoContainer columns one">
+                <img src="../Images/Logos/logo-150x77.png" alt="Sun and Moon Web Logo" height="30" />
+            </div>
+            <div class="siteSelect columns three">
+                <select id="ddlSites">
+                    <option value="1" selected="selected">Test Site</option>
+                    <option value="2">Test Site 2</option>
+                </select>
+            </div>
+            <div class="hintToggle columns three">
+                <ul>
+                    <li>Hints:</li>
+                    <li class="hintSelector"><a href="javascript://" class="on selected">On</a><a href="javascript://" class="off">Off</a></li>
+                </ul>
+            </div>
+            <div class="links columns four">
+                <ul>
+                    <li><a href="#">Documentation</a></li>
+                    <li class="profileIcon"><a href="#">Img Here</a>
+                        <ul class="profileMenu hidden">
+                            <li>Manage Profile</li>
+                            <li>Log Out</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="main">
+            <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+            </asp:ContentPlaceHolder>
+        </div>
+    </div>
+    </form>
+</body>
+</html>

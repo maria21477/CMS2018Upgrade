@@ -33,7 +33,7 @@
             <div class="links columns four">
                 <ul>
                     <li><a href="#">Documentation</a></li>
-                    <li class="profileIcon"><a href="#">Img Here</a>
+                    <li class="profileIcon"><a href="#"><img src="../Images/Icons/manage_profile.png" alt="Manage Profile" /></a>
                         <ul class="profileMenu hidden">
                             <li>Manage Profile</li>
                             <li>Log Out</li>

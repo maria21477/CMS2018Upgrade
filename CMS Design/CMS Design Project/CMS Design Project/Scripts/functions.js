@@ -19,11 +19,11 @@
 
     // Highlight selected menu options
     $('.mainMenu ul li').click(function () {
-        $(this).addClass('selected');
+        $(this).addClass('selected').siblings('.selected').removeClass('selected');
         $('.secondaryMenu').show();
     });
 
     $('.secondaryMenu ul li').click(function () {
-        $(this).addClass('selected');
+        $(this).addClass('selected').siblings('.selected').removeClass('selected');
     });
 });

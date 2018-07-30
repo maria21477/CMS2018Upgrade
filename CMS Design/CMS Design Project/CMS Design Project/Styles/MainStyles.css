@@ -108,14 +108,17 @@ a { color: #fff;}
 .header {
     background-color: #489890;
     color: #fff;
-    width: 100%;
-    padding: 10px;
+    width: 98%;
+    padding: 10px 1% 10px 1%;
     border-bottom: solid 1px #fff;
     font-size: 0.8em;
     margin-bottom: 0;
 }
 
-.header ul {margin-top: 0;}
+.header ul {
+    margin-top: 0;
+    margin-bottom: 0;
+}
 
 .header .logoContainer { float: left; }
 .header .siteSelect { 
@@ -152,6 +155,7 @@ a { color: #fff;}
     color: #6D348D;
     cursor: default;
 }
+.header .links { float: right; }
 
 .header .links .profileIcon .profileMenu {
     position: absolute;
@@ -192,26 +196,31 @@ a { color: #fff;}
     float: left;
 }
 
-.mainMenu ul {
-    margin: 0;
-    padding: 30px 0 0 0;
-}
-
-.mainMenu ul li {
-    list-style: none;
-    padding: 10px;
-}
-
-.mainMenu ul li.selected {
-    background-color: #9EC5C0;
-}
-
 .secondaryMenu {
     background-color: #489890;
     color: #fff;
     width: 80px;
     font-size: 0.75em;
     float: left;
+}
+
+.mainMenu ul, .secondaryMenu ul {
+    margin: 0;
+    padding: 30px 0 0 0;
+}
+
+.mainMenu ul li, .secondaryMenu ul li {
+    list-style: none;
+    padding: 10px 10px 15px 10px;
+    text-align: center;
+}
+
+.mainMenu ul li img, .secondaryMenu ul li img {
+    margin-bottom: 10px;
+}
+
+.mainMenu ul li.selected, .secondaryMenu ul li.selected {
+    background-color: #9EC5C0;
 }
 
 .rightOptions {

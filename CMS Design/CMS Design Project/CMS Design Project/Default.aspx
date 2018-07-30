@@ -12,7 +12,7 @@
     </div>
     <div class="secondaryMenu" style="display:none;">
         <ul>
-            <li>Menus</li>
+            <li><a href="Sections/Menus.aspx">Menus</a></li>
             <li>Header and Footer</li>
         </ul>
     </div>

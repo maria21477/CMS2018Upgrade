@@ -68,6 +68,8 @@ p.inputLabel {
 .buttonContainer .button:first-child {
     margin-left: 0;
 }
+
+
 /****************** END FORM STYLES ******************/
 /****************** GRID STYLES ******************/
 .grid .row .columns {
@@ -285,17 +287,83 @@ p.inputLabel {
 
 .rightOptions {
     border-left: solid 2px #489890;
-    width: 250px;
+    width: 280px;
     font-size: 0.75em;
     float: right;
     padding: 30px 10px 10px 10px;
+    z-index: 10;
+    position: relative;
+    background-color: #fff;
+}
+
+.rightOptions .outer {
+    width: 100%;
+    background-color: #fff;
+}
+
+.rightOptions .outer .tab {
+    /* Safari */
+    -webkit-transform: rotate(-90deg);
+    /* Firefox */
+    -moz-transform: rotate(-90deg);
+    /* IE */
+    -ms-transform: rotate(-90deg);
+    /* Opera */
+    -o-transform: rotate(-90deg);
+    /* Internet Explorer */
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+
+    position: absolute;
+    left: -28px;
+    top: 50px;
+}
+
+.rightOptions .outer .tab a {
+    margin-top: 0px;
+    color: #c9c9c9;
+    font-size: 1.4em;
+    color: #489890;
+    margin-bottom: 30px;
+}
+
+.rightOptions .outer .tab .info {
+    background-color: #fff;
+}
+
+.rightOptions .inner {
+    width: 250px;
+    border-left: solid 2px #489890;
+    position:absolute;
+    right: 0;
+    top: 0;
+    background-color: #fff;
+    padding-left: 10px;
+    padding-top: 30px;
+}
+
+.rightOptions .inner p { 
+    width: 100%;
+    font-size: 1.1em;
+    line-height: 1.4em;
+    margin-top: 12px;
+}
+
+.rightOptions .inner p a.button {
+    background-color: #489890;
+    color: #fff;
+    border: solid 1px #489890;
+    border-radius: 5px;
+    min-width: 50px;
+    padding: 5px 10px;
+    font-size: 1em;
+    float: right;
 }
 
 .rightOptions h3 { 
-    margin-top: 0;
+    
     font-size: 1.4em;
     text-align: center;
-    color: #808080;
+    color: #489890;
     margin-bottom: 30px;
 }
 
@@ -357,8 +425,8 @@ ul.itemsContainer li {
     height: 50px;
     padding: 10px;
     margin-bottom: 20px;
-    vertical-align: middle;
     cursor: pointer;
+    position: relative;
 }
 
 ul.itemsContainer li.inactive {
@@ -401,6 +469,9 @@ ul.itemsContainer li.add {
 ul.itemsContainer li.add.selected { 
     background-image: url('../Images/Icons/add_item_selected.png');
 }
+
+
+
 
 /****************** END MENUS ******************/
 

@@ -5,14 +5,14 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <div class="mainMenu">
         <ul>
-            <li>Framework</li>
-            <li>Content</li>
-            <li>Admin</li>
+            <li><img src="Images/Icons/framework.png" alt="Framework" /><br />Framework</li>
+            <li><img src="Images/Icons/content.png" alt="Content" /><br />Content</li>
+            <li><img src="Images/Icons/admin.png" alt="Admin" /><br />Admin</li>
         </ul>
     </div>
     <div class="secondaryMenu" style="display:none;">
         <ul>
-            <li>Menus</li>
+            <li><a href="Sections/Menus.aspx">Menus</a></li>
             <li>Header and Footer</li>
         </ul>
     </div>

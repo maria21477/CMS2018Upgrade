@@ -1,10 +1,18 @@
 ﻿body {
     margin:0;
     padding: 0;
-    font-family: Arial;
+    font-family: 'Exo 2', 'Raleway', Arial;
 }
 
-select { 
+
+
+ul li { list-style: none;}
+
+a { text-decoration: none; }
+
+/****************** FORM STYLES ******************/
+
+select {
     min-width: 200px;
     border: solid 1px #c9c9c9;
     border-radius: 3px;
@@ -12,12 +20,56 @@ select {
     font-size: 0.9em;
 }
 
-ul li { list-style: none;}
+input[type=text] {
+    min-width: 200px;
+    border: solid 1px #c9c9c9;
+    border-radius: 3px;
+    padding: 5px;
+    font-size: 0.9em;
+    height: 15px;
+    margin-top: 5px;
+}
 
-a { color: #fff;}
+input[type=radio] {
+    margin-left: 0;
+}
 
+label {
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+label.radioLabel {
+    font-weight: normal;
+}
+
+p.inputLabel {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.buttonContainer {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.buttonContainer .button {
+    background-color: #489890;
+    color: #fff;
+    border: solid 1px #489890;
+    border-radius: 5px;
+    min-width: 50px;
+    padding: 5px 10px;
+    font-size: 1.2em;
+    margin-left: 20px;
+}
+
+.buttonContainer .button:first-child {
+    margin-left: 0;
+}
+/****************** END FORM STYLES ******************/
 /****************** GRID STYLES ******************/
-
 .grid .row .columns {
     background-color: #4db25c;
 }
@@ -108,14 +160,21 @@ a { color: #fff;}
 .header {
     background-color: #489890;
     color: #fff;
-    width: 100%;
-    padding: 10px;
+    width: 98%;
+    padding: 10px 1% 10px 1%;
     border-bottom: solid 1px #fff;
     font-size: 0.8em;
     margin-bottom: 0;
 }
 
-.header ul {margin-top: 0;}
+.header a {
+    color: #fff;
+}
+
+.header ul {
+    margin-top: 0;
+    margin-bottom: 0;
+}
 
 .header .logoContainer { float: left; }
 .header .siteSelect { 
@@ -152,6 +211,7 @@ a { color: #fff;}
     color: #6D348D;
     cursor: default;
 }
+.header .links { float: right; }
 
 .header .links .profileIcon .profileMenu {
     position: absolute;
@@ -188,30 +248,39 @@ a { color: #fff;}
     color: #fff;
     border-right: solid 1px #fff;
     width: 80px;
-    font-size: 0.75em;
+    font-size: 0.8em;
     float: left;
-}
-
-.mainMenu ul {
-    margin: 0;
-    padding: 30px 0 0 0;
-}
-
-.mainMenu ul li {
-    list-style: none;
-    padding: 10px;
-}
-
-.mainMenu ul li.selected {
-    background-color: #9EC5C0;
 }
 
 .secondaryMenu {
     background-color: #489890;
     color: #fff;
     width: 80px;
-    font-size: 0.75em;
+    font-size: 0.8em;
     float: left;
+}
+
+.mainMenu a, .secondaryMenu a {
+    color: #fff;
+}
+
+.mainMenu ul, .secondaryMenu ul {
+    margin: 0;
+    padding: 30px 0 0 0;
+}
+
+.mainMenu ul li, .secondaryMenu ul li {
+    list-style: none;
+    padding: 10px 10px 15px 10px;
+    text-align: center;
+}
+
+.mainMenu ul li img, .secondaryMenu ul li img {
+    margin-bottom: 10px;
+}
+
+.mainMenu ul li.selected, .secondaryMenu ul li.selected {
+    background-color: #9EC5C0;
 }
 
 .rightOptions {
@@ -219,6 +288,20 @@ a { color: #fff;}
     width: 250px;
     font-size: 0.75em;
     float: right;
+    padding: 30px 10px 10px 10px;
+}
+
+.rightOptions h3 { 
+    margin-top: 0;
+    font-size: 1.4em;
+    text-align: center;
+    color: #808080;
+    margin-bottom: 30px;
+}
+
+.rightOptions .formContainer {
+    padding-bottom: 40px;
+    border-bottom: solid 2px #489890;
 }
 
 .mainSection { 
@@ -246,6 +329,79 @@ a { color: #fff;}
     line-height: 1.4em;
 }
 
+.mainSection .bottomOptions {
+    height: 60px;
+    background-color: #c9c9c9;
+    color: #489890;
+    bottom: 0;
+    position: absolute;
+    left: 161px;
+}
+
+
 /****************** END FRAMEWORK ******************/
+
+/****************** MENUS ******************/
+
+ul.itemsContainer { 
+    margin: 0;
+    padding: 0;
+}
+
+ul.itemsContainer li {
+    margin-right: 2%;
+    width: 250px;
+    border: solid 1px #489890;
+    float: left;
+    border-radius: 5px;
+    height: 50px;
+    padding: 10px;
+    margin-bottom: 20px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+ul.itemsContainer li.inactive {
+    background-color: #DCF4F1;
+}
+
+ul.itemsContainer li.selected {
+    background-color: #489890;
+}
+
+ul.itemsContainer li span.title {
+    color: #489890;
+    font-weight: bold;
+}
+
+ul.itemsContainer li span.subtitle {
+    color: #808080;
+    font-weight: bold;
+    font-size: 0.8em;
+}
+
+ul.itemsContainer li span.subtitle.none {
+    font-style: italic;
+}
+
+ul.itemsContainer li.selected span.title {
+    color: #fff;
+}
+
+ul.itemsContainer li.selected span.subtitle {
+    color: #c9c9c9;
+}
+
+ul.itemsContainer li.add { 
+    background-image: url('../Images/Icons/add_item.png');
+    background-position:center;
+    background-repeat: no-repeat;
+}
+
+ul.itemsContainer li.add.selected { 
+    background-image: url('../Images/Icons/add_item_selected.png');
+}
+
+/****************** END MENUS ******************/
 
 /** http://paletton.com/#uid=75A0u0kleqtbzEKgVuIpcmGtdhZ **/

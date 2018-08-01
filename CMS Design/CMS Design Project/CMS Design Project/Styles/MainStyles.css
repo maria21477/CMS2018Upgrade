@@ -470,7 +470,9 @@ ul.itemsContainer li.add.selected {
     background-image: url('../Images/Icons/add_item_selected.png');
 }
 
-
+.panel h3 {
+    color: #6D348D;
+}
 
 
 /****************** END MENUS ******************/

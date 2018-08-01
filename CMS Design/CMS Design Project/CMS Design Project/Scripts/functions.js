@@ -37,6 +37,17 @@
         $(this).siblings('.selected').removeClass('selected');
         $(this).toggleClass('selected');
 
+        // Remove selection from other sub menus as well as submenus themselves - this may change once we have actual data
+        var menuContainer = $(this).parent('ul');
+
+        menuContainer.nextAll('.subMenu').hide();
+        menuContainer.nextAll('.panel').find('.selected').removeClass('selected');
+
+        // Deselect everything in another menu location
+        var locationContainer = $(this).parents('.location');
+        locationContainer.siblings('.location').find('.selected').removeClass('selected');
+        locationContainer.siblings('.location').find('.subMenu').hide();
+
         // If this was the add button, show the right bar with add options
         if (!$(this).hasClass('add')) {
             $('#txtItemName').val($(this).find('.title').html());
@@ -49,10 +60,38 @@
             }
         }
 
-        $('.rightOptions .outer .tab').fadeToggle('fast', function () {
-            $('.rightOptions .outer .info').toggle('fast');
-        });
-        $(".rightOptions .inner").animate({ width: 'toggle' }, 300);
+        if ($(this).hasClass('selected')) {
+            $('.rightOptions .outer .info').hide('fast');
+            $('.rightOptions .outer .tab').fadeIn('fast', function () {
+
+                $(".rightOptions .inner").fadeIn('slow').animate({ width: '250px' }, 300);
+            });
+            
+            // **** Demo of sub items ***/
+            if ($(this).find('.title').html() == 'Retreats') {
+                $('#divRetreatsMenu').show();
+            }
+
+            if ($(this).find('.title').html() == 'Classes') {
+                $('#divClassesMenu').show();
+            }
+        }
+        else {
+            $(".rightOptions .inner").hide();
+            $('.rightOptions .outer .tab').hide('fast', function () {
+                $(".rightOptions .outer .info").fadeIn('slow').animate({ width: '280px' }, 300);
+                
+            });
+
+            // **** Demo of sub items ***/
+            if ($(this).find('.title').html() == 'Retreats') {
+                $('#divRetreatsMenu').hide();
+            }
+
+            if ($(this).find('.title').html() == 'Classes') {
+                $('#divClassesMenu').hide();
+            }
+        }
         
     });
 

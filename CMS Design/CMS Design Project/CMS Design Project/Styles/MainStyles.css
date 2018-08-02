@@ -359,6 +359,10 @@ p.inputLabel {
     float: right;
 }
 
+.rightOptions .inner p a.button.selected {
+    background-color: #6D348D;
+}
+
 .rightOptions h3 { 
     
     font-size: 1.4em;
@@ -474,6 +478,40 @@ ul.itemsContainer li.add.selected {
     color: #6D348D;
 }
 
+.panel.disabled li {
+    background-color: #F9F9F9;
+    cursor: help;
+}
+
+.panel.disabled li.selected {
+    background-color: #808080;
+}
+
+.panel.disabled li.inactive {
+    background-color: #c9c9c9;
+}
+
+.panel.available li {
+    background-color: #EBDBF4;
+    border-color: #6D348D;
+}
+
+.panel.available li span.title {
+    color: #6D348D;
+}
+
+.panel.available li.selected, .panel li.linked {
+    background-color: #6D348D;
+}
+
+.panel.available li.selected span.title, .panel li.linked span.title {
+    color: #fff;
+}
+
+.panel.available li.disabled {
+    background-color: #F9F9F9;
+    cursor: help;
+}
 
 /****************** END MENUS ******************/
 

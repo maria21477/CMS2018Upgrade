@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPages/SiteMaster.master" AutoEventWireup="true" CodeFile="Menus.aspx.cs" Inherits="Sections_Navigation" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+    <script src="../Scripts/menuFunctions.js" type="text/javascript"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <div class="mainMenu">
@@ -43,8 +44,8 @@
                         <a href="javascript://" class="button">Cancel</a>
                     </div>
                 </div>
-                <p>Link to page <a href="javascript://" class="button">Edit</a></p>
-                <p>Link to section <a href="javascript://" class="button">Edit</a></p>
+                <p>Link to page <a id="hrefLinkPage" href="javascript://" class="button">Edit</a></p>
+                <p>Link to section <a id="hrefLinkSection" href="javascript://" class="button">Edit</a></p>
             </div>
         </div>
         
@@ -132,6 +133,12 @@
 
         </div>
     </div>
-    
+    <script type="text/javascript">
+    // <![CDATA[
+        $(document).ready(function () {
+            menuFunctions.menuReady();
+        });
+    //]]>
+    </script>
 </asp:Content>
 

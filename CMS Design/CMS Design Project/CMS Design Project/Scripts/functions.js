@@ -34,65 +34,7 @@
 
     // Item selection
     $('.itemsContainer li').click(function () {
-        $(this).siblings('.selected').removeClass('selected');
-        $(this).toggleClass('selected');
-
-        // Remove selection from other sub menus as well as submenus themselves - this may change once we have actual data
-        var menuContainer = $(this).parent('ul');
-
-        menuContainer.nextAll('.subMenu').hide();
-        menuContainer.nextAll('.panel').find('.selected').removeClass('selected');
-
-        // Deselect everything in another menu location
-        var locationContainer = $(this).parents('.location');
-        locationContainer.siblings('.location').find('.selected').removeClass('selected');
-        locationContainer.siblings('.location').find('.subMenu').hide();
-
-        // If this was the add button, show the right bar with add options
-        if (!$(this).hasClass('add')) {
-            $('#txtItemName').val($(this).find('.title').html());
-
-            if ($(this).hasClass('inactive')) {
-                $('#rdoInactive').attr('checked', 'checked');
-            }
-            else {
-                $('#rdoActive').attr('checked', 'checked');
-            }
-        }
-
-        if ($(this).hasClass('selected')) {
-            $('.rightOptions .outer .info').hide('fast');
-            $('.rightOptions .outer .tab').fadeIn('fast', function () {
-
-                $(".rightOptions .inner").fadeIn('slow').animate({ width: '250px' }, 300);
-            });
-            
-            // **** Demo of sub items ***/
-            if ($(this).find('.title').html() == 'Retreats') {
-                $('#divRetreatsMenu').show();
-            }
-
-            if ($(this).find('.title').html() == 'Classes') {
-                $('#divClassesMenu').show();
-            }
-        }
-        else {
-            $(".rightOptions .inner").hide();
-            $('.rightOptions .outer .tab').hide('fast', function () {
-                $(".rightOptions .outer .info").fadeIn('slow').animate({ width: '280px' }, 300);
-                
-            });
-
-            // **** Demo of sub items ***/
-            if ($(this).find('.title').html() == 'Retreats') {
-                $('#divRetreatsMenu').hide();
-            }
-
-            if ($(this).find('.title').html() == 'Classes') {
-                $('#divClassesMenu').hide();
-            }
-        }
-        
+        siteFunctions.itemSelection($(this));
     });
 
     $('.rightOptions .outer .tab').click(function () {
@@ -103,3 +45,69 @@
     });
     
 });
+
+var siteFunctions = new function () {
+
+    // Item selection
+    this.itemSelection = function (button) {
+        button.siblings('.selected').removeClass('selected');
+        button.toggleClass('selected');
+        $('.itemsContainer li.linked').removeClass('linked');
+
+        // Remove selection from other sub menus as well as submenus themselves - this may change once we have actual data
+        var menuContainer = button.parent('ul');
+
+        menuContainer.nextAll('.subMenu').hide();
+        menuContainer.nextAll('.panel').find('.selected').removeClass('selected');
+
+        // Deselect everything in another menu location
+        var locationContainer = button.parents('.location');
+        locationContainer.siblings('.location').find('.selected').removeClass('selected');
+        locationContainer.siblings('.location').find('.subMenu').hide();
+
+        // If this was the add button, show the right bar with add options
+        if (!button.hasClass('add')) {
+            $('#txtItemName').val(button.find('.title').html());
+
+            if (button.hasClass('inactive')) {
+                $('#rdoInactive').attr('checked', 'checked');
+            }
+            else {
+                $('#rdoActive').attr('checked', 'checked');
+            }
+        }
+
+        if (button.hasClass('selected')) {
+            $('.rightOptions .outer .info').hide('fast');
+            $('.rightOptions .outer .tab').fadeIn('fast', function () {
+
+                $(".rightOptions .inner").fadeIn('slow').animate({ width: '250px' }, 300);
+            });
+
+            // **** Demo of sub items ***/
+            if (button.find('.title').html() == 'Retreats') {
+                $('#divRetreatsMenu').show();
+            }
+
+            if (button.find('.title').html() == 'Classes') {
+                $('#divClassesMenu').show();
+            }
+        }
+        else {
+            $(".rightOptions .inner").hide();
+            $('.rightOptions .outer .tab').hide('fast', function () {
+                $(".rightOptions .outer .info").fadeIn('slow').animate({ width: '280px' }, 300);
+
+            });
+
+            // **** Demo of sub items ***/
+            if (buttonfind('.title').html() == 'Retreats') {
+                $('#divRetreatsMenu').hide();
+            }
+
+            if (button.find('.title').html() == 'Classes') {
+                $('#divClassesMenu').hide();
+            }
+        }
+    }
+};

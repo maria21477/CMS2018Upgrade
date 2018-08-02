@@ -275,6 +275,7 @@ p.inputLabel {
     list-style: none;
     padding: 10px 10px 15px 10px;
     text-align: center;
+    cursor: pointer;
 }
 
 .mainMenu ul li img, .secondaryMenu ul li img {
@@ -376,7 +377,11 @@ p.inputLabel {
     border-bottom: solid 2px #489890;
 }
 
-.rightOptions .inner .pageContainer p {
+.rightOptions .inner .pageContainer, .rightOptions .inner .linkedItemContainer {
+    border-bottom: solid 2px #489890;
+}
+
+.rightOptions .inner .pageContainer p, .rightOptions .inner .linkedItemContainer p {
     position: relative;
     display: inline-block;
 }
@@ -384,18 +389,21 @@ p.inputLabel {
 .rightOptions .inner p span.label {
     font-weight: bold;
     float: left;
-    font-size: 1.2em;
 }
 
 .rightOptions .inner p a.icon
 {
-    height: 30px;
-    width: 30px;
-    margin-left: 20px;
+    height: 25px;
+    width: 25px;
+    margin-right: 20px;
     display: block;
     background-repeat: no-repeat;
     background-size: contain;
-    float: left;
+    float: right;
+}
+
+.rightOptions .inner p a.icon.disabled {
+    cursor: help;
 }
 
 .rightOptions .inner p a.icon.link {
@@ -406,8 +414,17 @@ p.inputLabel {
     background-image: url('../Images/Icons/Item/unlink.png');
 }
 
+.rightOptions .inner p a.icon.link.disabled {
+    background-image: url('../Images/Icons/Item/link_disabled.png');
+}
+
+.rightOptions .inner p a.icon.unlink.disabled {
+    background-image: url('../Images/Icons/Item/unlink_disabled.png');
+}
+
+
 .mainSection { 
-    overflow: hidden;
+    overflow: auto;
     padding: 50px;
 }
 
@@ -442,6 +459,43 @@ p.inputLabel {
 
 
 /****************** END FRAMEWORK ******************/
+
+/****************** PAGES ******************/
+
+.pageSearchResults ul {
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.pageSearchResults ul li {
+    margin-right: 2%;
+    width: 250px;
+    float: left;
+    margin-bottom: 20px;
+    cursor: pointer;
+    position: relative;
+}
+
+.pageItem .thumbnailHolder {
+    border: solid 1px #c9c9c9;
+    padding: 5px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    width: 228px;
+}
+
+.pageItem .thumbnailHolder p {
+    margin: 5px 0;
+}
+
+.pageItem .thumbnailHolder .thumbnail {
+    height: 150px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/****************** END PAGES ******************/
 
 /****************** MENUS ******************/
 
@@ -544,5 +598,49 @@ ul.itemsContainer li.add.selected {
 }
 
 /****************** END MENUS ******************/
+
+/****** OVERLAY STYLES ******/
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    filter: alpha(opacity=50);
+    -moz-opacity: 0.5;
+    -khtml-opacity: 0.5;
+    opacity: 0.7;
+    z-index: 10000;
+}
+
+.overlayContainer {
+    background: #ffffff;
+    padding: 15px;
+    padding: 5px;
+    position: absolute;
+    top: 20%;
+    left: 33%;
+    z-index: 65537;
+    border-radius: 10px;
+}
+
+.overlayContainer .overlayContainerInner {
+    border: 1px solid #27687e;
+    border-radius: 10px;
+    position: relative;
+    display: inline-block;
+    padding: 15px;
+}
+
+.overlayContainer .close {
+    position: absolute;
+    top: -12px;
+    right: -12px;
+    z-index: 10000;
+}
+
+
+/****** END OVERLAY STYLES ******/
 
 /** http://paletton.com/#uid=75A0u0kleqtbzEKgVuIpcmGtdhZ **/

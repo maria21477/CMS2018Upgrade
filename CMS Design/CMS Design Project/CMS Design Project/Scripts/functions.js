@@ -1,13 +1,17 @@
 ﻿$(document).ready(function () {
 
     // Set the minimum height of the menus and options panels to be the height of the window.
-    $(".mainMenu, .secondaryMenu, .rightOptions, .rightOptions .inner").css({ minHeight: $(window).innerHeight() - $('.header').outerHeight() + 'px' });
+    $('.mainMenu, .secondaryMenu').outerHeight($(window).innerHeight() - $('.header').outerHeight() + 'px');
+    $('.rightOptions, .rightOptions .inner').outerHeight($(window).innerHeight() - $('.header').outerHeight() + 'px');
+    $('.mainSection').outerHeight($(window).innerHeight() - $('.header').outerHeight() + 'px' );
 
     // Set width of the bottom options panel
-    $('.mainSection .bottomOptions').css({ width: $(window).innerWidth() - 161 + 'px' });
+    $('.mainSection .bottomOptions').outerHeight({ width: $(window).innerWidth() - 161 + 'px' });
 
     $(window).resize(function () {
-        $(".mainMenu, .secondaryMenu, .rightOptions, .rightOptions .inner").css({ minHeight: $(window).innerHeight() - $('.header').outerHeight() + 'px' });
+        $('.mainMenu, .secondaryMenu').outerHeight($(window).innerHeight() - $('.header').outerHeight() + 'px');
+        $('.rightOptions, .rightOptions .inner').outerHeight($(window).innerHeight() - $('.header').outerHeight() + 'px');
+        $('.mainSection').outerHeight($(window).innerHeight() - $('.header').outerHeight() + 'px');
         $('.mainSection .bottomOptions').css({ width: $(window).innerWidth() - 161 + 'px' });
     });
 
@@ -111,3 +115,203 @@ var siteFunctions = new function () {
         }
     }
 };
+
+var overlay = new function () {
+
+    // Gets one of the content types configured for the site
+    this.GetContent = function (code, contentParams) {
+        var content;
+
+        switch (code) {
+            case "CONTACTFORM":
+                content = formFunctions.BuildContactForm();
+                break;
+
+            case "CONFIRMATION":
+                content = overlay.BuildConfirmationContent(contentParams);
+                break;
+
+        }
+
+        return content;
+    }
+
+    this.Open = function (params) {
+        var content;
+        var callback;
+
+        if (params !== undefined && params != null) {
+            content = params.Content;
+            callback = params.Callback;
+        }
+
+        $('#overlay').hide();
+        $('.overlayContainer').hide();
+
+        // Clear contents that are currently in overlay
+        $('.overlayContainer .overlayContainerInner').html('');
+
+        // Put the content in the overlay
+        if (content !== undefined && content != null) {
+            $('.overlayContainer .overlayContainerInner').append(content);
+        }
+
+        // Do anything else we need to with the contents of the overlay
+        if (callback !== undefined && callback != null) {
+            callback();
+        }
+
+        // Work out the 'left' attribute
+        var leftPos = ($(window).width() - $('.overlayContainer').width()) / 2;
+
+        $('.overlayContainer').css({ left: leftPos + 'px' });
+
+        $('#overlay').show();
+
+        // Set top position
+        var wHeight = $(window).height();
+        var overlayHeight = $('.overlayContainer').height();
+
+        var overlayTop = (wHeight / 2) - (overlayHeight / 2) + $(document).scrollTop();
+
+        $('.overlayContainer').css({ 'top': overlayTop });
+
+        $('.overlayContainer').show();
+    };
+
+    // Updates what is displayed in an already open overlay
+    this.SetContent = function (content) {
+        var container = $('<div class="overlayContainerInner"></div>');
+        container.append(content);
+
+        $('.overlayContainer .overlayContainerInner').replaceWith(container);
+    }
+
+    this.Close = function () {
+        $('#overlay').hide();
+        $('.overlayContainer').hide();
+
+        // Clear contents
+        $('.overlayContainer .overlayContainerInner').html('');
+    };
+
+    this.BuildConfirmationContent = function (params) {
+        var title = '';
+        var message = '';
+        var includeComments = false;
+        var cancelBtnText = 'Cancel';
+        var confirmBtnText = 'Confirm';
+        var cancelBtnCallback = function () { overlay.Close(); };
+        var confirmBtnCallback = function () { overlay.Close(); };
+        var confirmBtnParams;
+
+        // Replace defaults with info passed in
+        if (params !== undefined && params != null) {
+            if (params.Title !== undefined && params.Title != null) {
+                title = params.Title;
+            }
+
+            if (params.Message !== undefined && params.Message != null) {
+                message = params.Message;
+            }
+
+            if (params.IncludeComments !== undefined && params.IncludeComments != null) {
+                includeComments = params.IncludeComments;
+            }
+
+            if (params.CancelBtnText !== undefined && params.CancelBtnText != null) {
+                cancelBtnText = params.CancelBtnText;
+            }
+
+            if (params.ConfirmBtnText !== undefined && params.ConfirmBtnText != null) {
+                confirmBtnText = params.ConfirmBtnText;
+            }
+
+            if (params.CancelBtnCallback !== undefined && params.CancelBtnCallback != null) {
+                cancelBtnCallback = params.CancelBtnCallback;
+            }
+
+            if (params.ConfirmBtnCallback !== undefined && params.ConfirmBtnCallback != null) {
+                confirmBtnCallback = params.ConfirmBtnCallback;
+            }
+
+            if (params.ConfirmBtnParams !== undefined && params.ConfirmBtnParams != null) {
+                confirmBtnParams = params.ConfirmBtnParams;
+            }
+        }
+
+        // Build out content of overlay
+        var contentContainer = $('<div></div>');
+        var buttonContainer = $('<div class="buttonContainer"></div>');
+        var button = '<a href="javascript://" class="button"></a>';
+
+        if (title != '') {
+            contentContainer.append('<h2>' + title + '</h2>');
+        }
+
+        if (message != '') {
+            contentContainer.append('<p>' + message + '</p>');
+        }
+
+        // Add a text area for comments if required
+        if (includeComments) {
+            var textArea = $('<textarea id="txtComments" rows="10" cols="5"></textarea>');
+
+            contentContainer.append(textArea);
+        }
+
+        // Confirm button
+        var confirmBtn = $(button);
+        confirmBtn.html(confirmBtnText);
+        confirmBtn.click(function () {
+
+            if (includeComments) {
+                // Assuming we want the comments if we asked for the box!
+                confirmBtnParams.Comments = $('#txtComments').html();
+            }
+
+            confirmBtnCallback(confirmBtnParams);
+        });
+        buttonContainer.append(confirmBtn);
+
+        // Cancel button
+        var cancelBtn = $(button);
+        cancelBtn.html(cancelBtnText);
+        cancelBtn.click(function () {
+            cancelBtnCallback();
+        });
+        buttonContainer.append(cancelBtn);
+
+        contentContainer.append(buttonContainer);
+
+        return contentContainer;
+    }
+}
+
+var ToolTip = new function () {
+    this.Initialise = function () {
+        Opentip.styles.infotip = {
+            extends: 'alert',
+            color: '#ffffff',
+            opacity: 0,
+            height: '100px',
+            padding: '5px',
+            background: '#0b0b3b',
+            borderColor: '#0b0b3b'
+        }
+
+        // Add tool tip to each error info icon
+        $('.icon.disabled').each(function () {
+            var content = $(this).attr('data-content');
+
+            var tip = new Opentip($(this), content,
+                {
+                    target: '#' + $(this).attr('id'),
+                    tipJoint: 'right',
+                    fixed: true,
+                    style: 'infotip',
+                    showOn: 'mouseover'
+                });
+        });
+    }
+}

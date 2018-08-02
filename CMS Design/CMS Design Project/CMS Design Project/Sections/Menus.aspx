@@ -45,22 +45,35 @@
                     </div>
                 </div>
                 <div class="pageContainer">
-                    <p><span class="label">Page</span> <a href="javascript://" class="icon link"></a></p>
-                    <p>Class Listing<a id="hrefLinkPage" href="javascript://" class="button">Edit</a></p>
-                    <div class="thumbnailHolder">
-                        <div class="thumbnail" style="background-image:url('../Images/Thumbnails/yin_yang_flowers.jpg')"></div>
+                    <p>
+                        <span class="label">Page</span>
+                        <a id="hlnkCancelLinkPage" href="javascript://" class="button selected" style="display:none;">Cancel Update</a>
+                        <a href="javascript://" class="icon unlink" title="Remove Link to Page"></a>
+                        <a id="hrefLinkPage" href="javascript://" class="icon link" title="Add / Edit Linked Page"></a>
+                    </p>
+                    <div class="pageItem">
+                        <div class="thumbnailHolder">
+                            <div class="thumbnail" style="background-image:url('../Images/Thumbnails/yin_yang_flowers.jpg')"></div>
+                            <p>Class Listing</p>
+                        </div>
                     </div>
                 </div>
                 
                 <div class="linkedItemContainer">
-                    <p>Link to section <a id="hrefLinkSection" href="javascript://" class="button">Edit</a></p>
+                    <p>
+                        <span class="label">Menu Item</span> 
+                        <a id="hlnkCancelLinkMenu" href="javascript://" class="button selected" style="display:none;">Cancel Update</a>
+                        <a href="javascript://" class="icon unlink disabled" title="Remove Link to Page"></a>
+                        <a id="hrefLinkSection" href="javascript://" class="icon link" title="Add / Edit Linked Page"></a>
+                    </p>
+                    <p>[No Item Linked]</p>
                 </div>
                 
             </div>
         </div>
         
     </div>
-    <div class="mainSection">
+    <div class="mainSection scrollbar-inner">
         <div class="panel location">
             <h2>Main Menu</h2>
             <ul class="itemsContainer row">
@@ -141,6 +154,28 @@
         </div>
         <div class="bottomOptions" style="display: none;">
 
+        </div>
+        <div class="pageSelection">
+            <div class="menuItemSummary">
+
+            </div>
+            <div class="pageListing">
+                <h2>Pages</h2>
+                <div class="formContainer">
+                    <input id="txtPageSearch" type="text" placeholder="Keyword" />
+                    <a id="hlinkPageSearch" href="javascript://" class="button">Search</a>
+                </div>
+                <div class="pageSearchResults">
+                    <ul class="row">
+                        <li class="pageItem">
+                            <div class="thumbnailHolder">
+                                <div class="thumbnail" style="background-image: url('../Images/Thumbnails/yin_yang_flowers.jpg')"></div>
+                                <p>Class Listing</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
     <script type="text/javascript">

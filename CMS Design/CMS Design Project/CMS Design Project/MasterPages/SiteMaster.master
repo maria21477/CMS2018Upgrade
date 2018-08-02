@@ -9,6 +9,7 @@
     <link href="../Styles/MainStyles.css" type="text/css" rel="stylesheet" />
     <script type="text/javascript" src="../Scripts/jquery-1.12.0.min.js"></script>
     <script type="text/javascript" src="../Scripts/functions.js"></script>
+    
     <asp:ContentPlaceHolder id="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -47,6 +48,15 @@
             <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
         
             </asp:ContentPlaceHolder>
+        </div>
+    </div>
+    <div id="overlay" style="display:none;"></div>
+        <div class="overlayContainer" style="display:none;">
+            <a href="javascript:overlay.Close()" class="close">
+                <img src="/Images/Icons/close.png" alt="Close Overlay"  />
+            </a>
+        <div class="overlayContainerInner">
+
         </div>
     </div>
     </form>

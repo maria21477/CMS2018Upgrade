@@ -44,8 +44,18 @@
                         <a href="javascript://" class="button">Cancel</a>
                     </div>
                 </div>
-                <p>Link to page <a id="hrefLinkPage" href="javascript://" class="button">Edit</a></p>
-                <p>Link to section <a id="hrefLinkSection" href="javascript://" class="button">Edit</a></p>
+                <div class="pageContainer">
+                    <p><span class="label">Page</span> <a href="javascript://" class="icon link"></a></p>
+                    <p>Class Listing<a id="hrefLinkPage" href="javascript://" class="button">Edit</a></p>
+                    <div class="thumbnailHolder">
+                        <div class="thumbnail" style="background-image:url('../Images/Thumbnails/yin_yang_flowers.jpg')"></div>
+                    </div>
+                </div>
+                
+                <div class="linkedItemContainer">
+                    <p>Link to section <a id="hrefLinkSection" href="javascript://" class="button">Edit</a></p>
+                </div>
+                
             </div>
         </div>
         

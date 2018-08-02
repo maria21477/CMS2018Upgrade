@@ -376,6 +376,36 @@ p.inputLabel {
     border-bottom: solid 2px #489890;
 }
 
+.rightOptions .inner .pageContainer p {
+    position: relative;
+    display: inline-block;
+}
+
+.rightOptions .inner p span.label {
+    font-weight: bold;
+    float: left;
+    font-size: 1.2em;
+}
+
+.rightOptions .inner p a.icon
+{
+    height: 30px;
+    width: 30px;
+    margin-left: 20px;
+    display: block;
+    background-repeat: no-repeat;
+    background-size: contain;
+    float: left;
+}
+
+.rightOptions .inner p a.icon.link {
+    background-image: url('../Images/Icons/Item/link.png');
+}
+
+.rightOptions .inner p a.icon.unlink {
+    background-image: url('../Images/Icons/Item/unlink.png');
+}
+
 .mainSection { 
     overflow: hidden;
     padding: 50px;

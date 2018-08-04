@@ -377,6 +377,12 @@ p.inputLabel {
     border-bottom: solid 2px #489890;
 }
 
+.rightOptions .pageSelection { 
+    bottom: 0; 
+    position: absolute;
+    z-index: 10;
+}
+
 .rightOptions .inner .pageContainer, .rightOptions .inner .linkedItemContainer {
     border-bottom: solid 2px #489890;
 }
@@ -482,6 +488,11 @@ p.inputLabel {
     margin-right: 10px;
     margin-bottom: 20px;
     width: 228px;
+}
+
+.pageItem.selected .thumbnailHolder {
+    background-color: #489890;
+    color: #fff;
 }
 
 .pageItem .thumbnailHolder p {

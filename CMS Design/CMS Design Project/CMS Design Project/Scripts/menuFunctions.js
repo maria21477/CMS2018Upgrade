@@ -1,6 +1,8 @@
 ﻿var menuFunctions = new function()
 {
     this.menuReady = function () {
+
+        // Add a link to another menu item
         $('#hrefLinkSection').click(function () {
 
             var editBtn = $(this);
@@ -55,7 +57,9 @@
             });
         });
 
+        // Cancel the add link to menu item
         $('#hlnkCancelLinkMenu').click(function () {
+
             // Put back the click events on disabled items
             $('.panel.location.disabled').find('li').click(function () {
                 siteFunctions.itemSelection($(this));
@@ -71,6 +75,57 @@
 
             // Remove available styling
             $('.panel.location.available').removeClass('available');
+
+            $(this).hide();
+            $(this).siblings('.icon').show();
+        });
+
+        // Add a link to a page within the site
+        $('#hrefLinkPage').click(function () {
+            var editBtn = $(this);
+
+            editBtn.hide();
+            editBtn.siblings('.icon').hide();
+            editBtn.siblings('.button').show();
+
+            // Hide the menu panel
+            $('#divMenuSelection').slideUp();
+
+            // Show the page panel
+            $('#divPageSelection').slideToggle();
+
+            // Add click event to page items
+            $('#divPageSelection .pageListing .pageSearchResults ul li.pageItem').unbind('click').click(function () {
+
+                // Remove selected class from any page item already selected
+                $('#divPageSelection .pageListing .pageSearchResults ul li.pageItem.selected').removeClass('selected');
+
+                // Add selected style to page item
+                $(this).addClass('selected');
+
+                // Show new page in right bar
+                $('.rightOptions .inner .pageContainer .pageItem').html($(this).html());
+
+                // Put buttons back as they were
+                $('#hlnkCancelLinkPage').hide();
+                $('#hlnkCancelLinkPage').siblings('.icon').show();
+
+                // Hide page panel
+                $('#divMenuSelection').slideDown();
+
+                // Show menu panel
+                $('#divPageSelection').slideToggle();
+            });
+        });
+
+        // Cancel a link to a page within the site
+        $('#hlnkCancelLinkPage').click(function () {
+
+            // Hide page panel
+            $('#divMenuSelection').slideDown();
+
+            // Show menu panel
+            $('#divPageSelection').slideToggle();
 
             $(this).hide();
             $(this).siblings('.icon').show();

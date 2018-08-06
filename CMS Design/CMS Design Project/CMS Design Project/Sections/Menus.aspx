@@ -48,7 +48,7 @@
                     <p>
                         <span class="label">Page</span>
                         <a id="hlnkCancelLinkPage" href="javascript://" class="button selected" style="display:none;">Cancel Update</a>
-                        <a href="javascript://" class="icon unlink" title="Remove Link to Page"></a>
+                        <a id="hlnkUnlinkPage" href="javascript://" class="icon unlink" title="Remove Link to Page"></a>
                         <a id="hrefLinkPage" href="javascript://" class="icon link" title="Add / Edit Linked Page"></a>
                     </p>
                     <div class="pageItem">
@@ -63,10 +63,12 @@
                     <p>
                         <span class="label">Menu Item</span> 
                         <a id="hlnkCancelLinkMenu" href="javascript://" class="button selected" style="display:none;">Cancel Update</a>
-                        <a href="javascript://" class="icon unlink disabled" title="Remove Link to Page"></a>
-                        <a id="hrefLinkSection" href="javascript://" class="icon link" title="Add / Edit Linked Page"></a>
+                        <a id="hrefUnlinkMenu" href="javascript://" class="icon unlink disabled" title="Remove Link to Page"></a>
+                        <a id="hrefLinkMenu" href="javascript://" class="icon link" title="Add / Edit Linked Page"></a>
                     </p>
-                    <p>[No Item Linked]</p>
+                    <div class="linkedItem">
+                        <p id="pLinkedMenu">[No Item Linked]</p>
+                    </div>
                 </div>
                 
             </div>

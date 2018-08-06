@@ -130,5 +130,75 @@
             $(this).hide();
             $(this).siblings('.icon').show();
         });
+
+        // Unlink a linked page
+        $('#hlnkUnlinkPage').click(function () {
+
+            if (!$(this).hasClass('disabled')) {
+
+                // Show overlay
+                var overlayParams = {};
+                var contentParams = {};
+
+                contentParams.Title = 'Unlink Page';
+                contentParams.Message = 'Are you sure you want to unlink this menu item from it\'s associated page?';
+                contentParams.ConfirmBtnCallback = function () {
+
+                    // Update database - TODO
+
+                    // Update rightbar
+                    $('.pageItem').html('<p>[No Page Linked]</p>');
+
+                    // Close overlay
+                    overlay.Close();
+                };
+
+                overlayParams.Content = overlay.GetContent("CONFIRMATION", contentParams);
+                overlay.Open(overlayParams);
+
+            }
+        });
+
+        // Unlink a menu item
+        $('#hrefUnlinkMenu').click(function () {
+            if (!$(this).hasClass('disabled')) {
+
+                // Show overlay
+                var overlayParams = {};
+                var contentParams = {};
+
+                contentParams.Title = 'Unlink Menu Item';
+                contentParams.Message = 'Are you sure you want to unlink the menu item from it\'s associated menu item?';
+                contentParams.ConfirmBtnCallback = function () {
+                    if (!$(this).hasClass('disabled')) {
+
+                        // Show overlay
+                        var overlayParams = {};
+                        var contentParams = {};
+
+                        contentParams.Title = 'Unlink Page';
+                        contentParams.Messages = 'Are you sure you want to unlink this menu item from it\'s associated page?';
+                        contentParams.ConfirmBtnCallback = function () {
+
+                            // Update database - TODO
+
+                            // Update right bar
+                            $('#pLinkedMenu').html('[No Item Linked]');
+
+                            // Close overlay
+                            overlay.Close();
+                        };
+
+                        overlayParams.Content = overlay.GetContent("CONFIRMATION", contentParams);
+                        overlay.Open(overlayParams);
+
+                    }
+                };
+
+                overlayParams.Content = overlay.GetContent("CONFIRMATION", contentParams);
+                overlay.Open(overlayParams);
+
+            }
+        });
     }
 }

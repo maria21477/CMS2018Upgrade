@@ -123,9 +123,6 @@ var overlay = new function () {
         var content;
 
         switch (code) {
-            case "CONTACTFORM":
-                content = formFunctions.BuildContactForm();
-                break;
 
             case "CONFIRMATION":
                 content = overlay.BuildConfirmationContent(contentParams);

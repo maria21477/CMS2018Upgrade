@@ -14,6 +14,7 @@
         <ul>
             <li><a href="Sections/Menus.aspx">Menus</a></li>
             <li>Header and Footer</li>
+            <li><a href="Sections/Pages/Listing.aspx"><img src="../Images/Icons/pages.png" alt="Pages" /><br />Pages</a></li>
         </ul>
     </div>
     <div class="mainSection">

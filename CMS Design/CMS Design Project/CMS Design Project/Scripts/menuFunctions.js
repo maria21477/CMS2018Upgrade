@@ -142,12 +142,18 @@
 
                 contentParams.Title = 'Unlink Page';
                 contentParams.Message = 'Are you sure you want to unlink this menu item from it\'s associated page?';
-                contentParams.ConfirmBtnCallback = function () {
+                contentParams.ConfirmBtnParams = {};
+                contentParams.ConfirmBtnParams.Btn = $(this);
+                contentParams.ConfirmBtnCallback = function (params) {
 
                     // Update database - TODO
 
                     // Update rightbar
                     $('.pageItem').html('<p>[No Page Linked]</p>');
+                    params.Btn.addClass('disabled');
+
+                    var newTip = new Opentip(params.Btn);
+                    newTip.setContent("Remove Link to Page")
 
                     // Close overlay
                     overlay.Close();
@@ -178,12 +184,18 @@
 
                         contentParams.Title = 'Unlink Page';
                         contentParams.Messages = 'Are you sure you want to unlink this menu item from it\'s associated page?';
-                        contentParams.ConfirmBtnCallback = function () {
+                        contentParams.ConfirmBtnParams = {};
+                        contentParams.ConfirmBtnParams.Btn = $(this);
+                        contentParams.ConfirmBtnCallback = function (params) {
 
                             // Update database - TODO
 
                             // Update right bar
                             $('#pLinkedMenu').html('[No Item Linked]');
+                            params.Btn.addClass('disabled');
+
+                            var newTip = new Opentip(params.Btn);
+                            newTip.setContent("Remove Link to Menu Item")
 
                             // Close overlay
                             overlay.Close();

@@ -39,7 +39,7 @@ label {
     font-weight: 600;
 }
 
-label.radioLabel {
+label.radioLabel, label.chkLabel {
     font-weight: normal;
 }
 
@@ -54,18 +54,38 @@ p.inputLabel {
     text-align: center;
 }
 
-.buttonContainer .button {
+.button {
     background-color: #489890;
     color: #fff;
     border: solid 1px #489890;
     border-radius: 5px;
     min-width: 50px;
-    padding: 5px 10px;
+    padding: 3px 10px 5px 10px;
     font-size: 1.2em;
     margin-left: 20px;
 }
 
-.buttonContainer .button:first-child {
+.button.inline {
+    margin-left: 0;
+    vertical-align: bottom;
+}
+
+.button.image {
+    width: 26px;
+    height: 26px;
+    min-width: 30px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline-block;
+    padding: 0;
+    
+}
+
+.button.image.search {
+    background-image: url('../Images/Icons/search.png');
+}
+
+.button:first-child {
     margin-left: 0;
 }
 
@@ -331,6 +351,10 @@ p.inputLabel {
     background-color: #fff;
 }
 
+.rightOptions .outer .info p.icon {
+    text-align: center;
+}
+
 .rightOptions .inner {
     width: 250px;
     border-left: solid 2px #489890;
@@ -461,12 +485,31 @@ p.inputLabel {
     bottom: 0;
     position: absolute;
     left: 161px;
+    text-align:center;
 }
+
+.mainSection .bottomOptions ul li {
+    float: left;
+    color: #fff;
+    margin-right: 20px;
+    font-size: 0.8em;
+}
+
+
 
 
 /****************** END FRAMEWORK ******************/
 
 /****************** PAGES ******************/
+
+.pageListing .formContainer {
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.pageListing .formContainer .button {
+    font-size: 1em;
+}
 
 .pageSearchResults ul {
     margin-left: 0;
@@ -504,6 +547,29 @@ p.inputLabel {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+}
+
+.pageListing .listingHeader {
+    display: inline-block;
+    position: relative;
+}
+
+.pageListing .listingHeader h2 {
+    float: left;
+}
+
+.pageListing .listingHeader a.icon {
+    height: 25px;
+    width: 25px;
+    margin: 22px 0 0 20px;
+    display: block;
+    background-repeat: no-repeat;
+    background-size: contain;
+    float: left;
+}
+
+.pageListing .listingHeader a.icon.filter {
+    background-image: url('../Images/Icons/filter.png');
 }
 
 /****************** END PAGES ******************/

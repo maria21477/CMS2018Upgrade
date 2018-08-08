@@ -40,11 +40,10 @@
                     <label class="radioLabel">Inactive</label>
             
                     <div class="buttonContainer">
-                        <a href="javascript://" class="button">Save</a>
-                        <a href="javascript://" class="button">Cancel</a>
+                        <a id="hrefSaveMenuItem" href="javascript://" class="button">Save</a>
                     </div>
                 </div>
-                <div class="pageContainer">
+                <div class="pageContainer" style="display:none;">
                     <p>
                         <span class="label">Page</span>
                         <a id="hlnkCancelLinkPage" href="javascript://" class="button selected" style="display:none;">Cancel Update</a>
@@ -59,11 +58,11 @@
                     </div>
                 </div>
                 
-                <div class="linkedItemContainer">
+                <div class="linkedItemContainer" style="display:none;">
                     <p>
                         <span class="label">Menu Item</span> 
                         <a id="hlnkCancelLinkMenu" href="javascript://" class="button selected" style="display:none;">Cancel Update</a>
-                        <a id="hrefUnlinkMenu" href="javascript://" class="icon unlink disabled" title="Remove Link to Page"></a>
+                        <a id="hrefUnlinkMenu" href="javascript://" class="icon unlink disabled" title="Remove Link to Menu Item" data-ot="Remove Link to Menu Item"></a>
                         <a id="hrefLinkMenu" href="javascript://" class="icon link" title="Add / Edit Linked Page"></a>
                     </p>
                     <div class="linkedItem">
@@ -79,7 +78,7 @@
         <div id="divMenuSelection">
             <div class="panel location">
                 <h2>Main Menu</h2>
-                <ul class="itemsContainer row">
+                <ul class="itemsContainer row sortable">
                     <li>
                         <span class="title">Home</span><br />
                         <span class="subtitle">Home</span>
@@ -96,7 +95,7 @@
                 </ul>
                 <div id="divRetreatsMenu" class="panel subMenu" style="display: none;">
                     <h3>Retreats Sub Menu</h3>
-                    <ul class="itemsContainer row">
+                    <ul class="itemsContainer row sortable">
                         <li>
                             <span class="title">Assisi</span><br />
                             <span class="subtitle">Assisi Retreat</span>
@@ -114,7 +113,7 @@
                 </div>
                 <div id="divClassesMenu" class="panel subMenu" style="display: none;">
                     <h3>Classes Sub Menu</h3>
-                    <ul class="itemsContainer row">
+                    <ul class="itemsContainer row sortable">
                         <li>
                             <span class="title">Vinyasa</span><br />
                             <span class="subtitle none">[No Page Assigned]</span>
@@ -139,7 +138,7 @@
             <div class="panel location">
                 <h2>Left Menus</h2>
                 <h3>Retreats</h3>
-                 <ul class="itemsContainer row">
+                 <ul class="itemsContainer row sortable">
                     <li>
                         <span class="title">Assisi</span><br />
                         <span class="subtitle">Assisi Retreat</span>

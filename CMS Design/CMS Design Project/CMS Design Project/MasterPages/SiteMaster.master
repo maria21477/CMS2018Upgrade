@@ -7,16 +7,20 @@
     <title>CMS Design Project</title>
     <link href="https://fonts.googleapis.com/css?family=Exo+2|Raleway" rel="stylesheet">
     <link href="../Styles/MainStyles.css" type="text/css" rel="stylesheet" />
-    <script type="text/javascript" src="../Scripts/jquery-3.3.1.js"></script>
-    <script type="text/javascript" src="../Scripts/jquery-ui.js"></script>
-    <script type="text/javascript" src="../Scripts/jquery-ui.min.js"></script>
+    <link href="../Styles/Plugins/opentip.css" type="text/css" rel="stylesheet" />
+    <link href="../Styles/Plugins/basic.css" type="text/css" rel="stylesheet" />
+    <link href="../Styles/Plugins/dropzone.css" type="text/css" rel="stylesheet" />
+
+    <script type="text/javascript" src="/Scripts/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="/Scripts/jquery-ui.js"></script>
+    <script type="text/javascript" src="/Scripts/jquery-ui.min.js"></script>
 
     <script src="/Scripts/Plugins/opentips.js" type="text/javascript"></script>
     <script src="/Scripts/Plugins/adapter-jquery.js" type="text/javascript"></script>
     <script src="/Scripts/Plugins/dropzone.js" type="text/javascript"></script>
     <script src="/Scripts/Plugins/dropzone-amd-module.js" type="text/javascript"></script>
 
-    <script type="text/javascript" src="../Scripts/functions.js"></script>
+    <script type="text/javascript" src="/Scripts/functions.js"></script>
     
     <asp:ContentPlaceHolder id="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -26,7 +30,7 @@
     <div class="mainContainer">
         <div class="header row">
             <div class="logoContainer columns one">
-                <img src="../Images/Logos/logo-150x77.png" alt="Sun and Moon Web Logo" height="30" />
+                <img src="/Images/Logos/logo-150x77.png" alt="Sun and Moon Web Logo" height="30" />
             </div>
             <div class="siteSelect columns three">
                 <select id="ddlSites">
@@ -43,7 +47,7 @@
             <div class="links columns four">
                 <ul>
                     <li><a href="#">Documentation</a></li>
-                    <li class="profileIcon"><a href="#"><img src="../Images/Icons/manage_profile.png" alt="Manage Profile" /></a>
+                    <li class="profileIcon"><a href="#"><img src="/Images/Icons/manage_profile.png" alt="Manage Profile" /></a>
                         <ul class="profileMenu hidden">
                             <li>Manage Profile</li>
                             <li>Log Out</li>
@@ -61,7 +65,7 @@
     <div id="overlay" style="display:none;"></div>
         <div class="overlayContainer" style="display:none;">
             <a href="javascript:overlay.Close()" class="close">
-                <img src="../Images/Icons/close.png" alt="Close Overlay"  />
+                <img src="/Images/Icons/close.png" alt="Close Overlay"  />
             </a>
         <div class="overlayContainerInner">
 

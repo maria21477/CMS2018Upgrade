@@ -47,6 +47,12 @@
             $('.rightOptions .outer .info').show();
         });
     });
+
+    // Enabling drag and drop re-ordering
+    $('.sortable').sortable();
+
+    // Initialise Tooltips
+    ToolTip.Initialise();
     
 });
 
@@ -79,6 +85,17 @@ var siteFunctions = new function () {
             else {
                 $('#rdoActive').attr('checked', 'checked');
             }
+
+            // Show the page and menu link sections
+            $('.rightOptions .outer .inner .pageContainer').show();
+            $('.rightOptions .outer .inner .linkedItemContainer').show();
+        }
+        else {
+            $('#txtItemName').val('');
+
+            // Hide the page and menu link sections
+            $('.rightOptions .outer .inner .pageContainer').hide();
+            $('.rightOptions .outer .inner .linkedItemContainer').hide();
         }
 
         if (button.hasClass('selected')) {
@@ -113,6 +130,38 @@ var siteFunctions = new function () {
                 $('#divClassesMenu').hide();
             }
         }
+
+        // Click events for 'Save' and 'Cancel' buttons in the right bar
+        $('#hrefSaveMenuItem').click(function () {
+
+            var valid = true;
+
+            // Validation
+            if (valid) {
+                if (button.hasClass('add')) {
+
+                    // Create new menu item
+                    var menuItem = $('<li class="ui-sortable-handle"></li>');
+                    var title = $('<span class="title">' + $('#txtItemName').val() + '</span >');
+                    var subTitle = $('<span class="subtitle none">[No Page Assigned]</span>');
+
+                    menuItem.append(title);
+                    menuItem.append('<br />');
+                    menuItem.append(subTitle);
+
+                    menuItem.insertBefore(button);
+
+                    // Show linked page and menu link
+                    $('.rightOptions .outer .inner .pageContainer').show();
+                    $('.rightOptions .outer .inner .linkedItemContainer').show();
+                }
+                else {
+                    // Update name of item
+                    button.find('li span.title').html($('#txtItemName').val());
+                }
+            }
+        });
+
     }
 };
 
@@ -287,28 +336,32 @@ var overlay = new function () {
 
 var ToolTip = new function () {
     this.Initialise = function () {
-        Opentip.styles.infotip = {
-            extends: 'alert',
-            color: '#ffffff',
-            opacity: 0,
-            height: '100px',
-            padding: '5px',
-            background: '#0b0b3b',
-            borderColor: '#0b0b3b'
+
+        if ($('.icon.disabled').length > 0) {
+            new Opentip('.icon.disabled');
         }
 
-        // Add tool tip to each error info icon
-        $('.icon.disabled').each(function () {
-            var content = $(this).attr('data-content');
+        //Opentip.styles.infotip = {
+        //    extends: 'alert',
+        //    color: '#ffffff',
+        //    opacity: 0,
+        //    height: '100px',
+        //    padding: '5px',
+        //    background: '#0b0b3b',
+        //    borderColor: '#0b0b3b'
+        //}
 
-            var tip = new Opentip($(this), content,
-                {
-                    target: '#' + $(this).attr('id'),
-                    tipJoint: 'right',
-                    fixed: true,
-                    style: 'infotip',
-                    showOn: 'mouseover'
-                });
-        });
+        //// Add tool tip to each error info icon
+        //$('.icon.disabled').each(function () {
+
+        //    var tip = new Opentip($(this), content,
+        //        {
+        //            target: '#' + $(this).attr('id'),
+        //            tipJoint: 'right',
+        //            fixed: true,
+        //            style: 'infotip',
+        //            showOn: 'mouseover'
+        //        });
+        //});
     }
 }

@@ -10,6 +10,14 @@ ul li { list-style: none;}
 
 a { text-decoration: none; }
 
+.italic {
+    font-style: italic;
+}
+
+.errorMessage {
+    color: #B52626;
+}
+
 /****************** FORM STYLES ******************/
 
 select {
@@ -89,6 +97,60 @@ p.inputLabel {
     margin-left: 0;
 }
 
+.buttonContainer.large {
+    display: inline-flex;
+    margin-bottom: 50px;
+}
+
+.buttonContainer.large .button {
+    padding: 30px 50px;
+    min-width: 180px;
+    
+}
+
+.buttonContainer.large.selection .button {
+    background-color: #fff;
+    color: #489890;
+}
+
+.buttonContainer.large.selection .button.selected {
+    background-color: #489890;
+    color: #fff;
+}
+
+.formContainer.large select {
+    min-width: 200px;
+    height: 50px;
+    font-size: 1.4em;
+}
+
+.formContainer.large ul.checkboxList {
+    display: inline-block;
+}
+
+.formContainer.large ul.checkboxList li {
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.formContainer.large ul.checkboxList li label {
+    margin-left: 10px;
+    top: -8px;
+    position: relative;
+}
+
+.formContainer.large ul.checkboxList li span.fakeCheckbox {
+    width: 30px;
+    height: 30px;
+    background-image: url('../Images/Icons/checkbox.png');
+    background-repeat: no-repeat;
+    position: relative;
+    display: inline-block;
+}
+
+.formContainer.large ul.checkboxList li span.fakeCheckbox.selected {
+    background-image: url('../Images/Icons/ticked_checkbox.png');
+}
 
 /****************** END FORM STYLES ******************/
 /****************** GRID STYLES ******************/
@@ -322,33 +384,52 @@ p.inputLabel {
     background-color: #fff;
 }
 
-.rightOptions .outer .tab {
-    /* Safari */
-    -webkit-transform: rotate(-90deg);
-    /* Firefox */
-    -moz-transform: rotate(-90deg);
-    /* IE */
-    -ms-transform: rotate(-90deg);
-    /* Opera */
-    -o-transform: rotate(-90deg);
-    /* Internet Explorer */
-    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+.rightOptions .outer .tabs {
+    display: inline-block;
+    position: relative;
+    padding: 0;
+    margin: 0;
+    right: 5px;
+}
 
-    position: absolute;
-    left: -28px;
-    top: 50px;
+.rightOptions .outer .tabs .tab {
+    padding-right: 10px;
+    border-right: solid 1px #489890;
+}
+
+.rightOptions .outer .tabs .tab.information a {
+    border: solid 1px #489890;
+    border-radius: 15px;
+    color: #fff;
+    background-color: #489890;
+    padding: 2px 10px;
+    font-size: 1.4em;
+}
+
+.rightOptions .outer .tabs .tab:first-child {
+    border-right: none;
 }
 
 .rightOptions .outer .tab a {
-    margin-top: 0px;
-    color: #c9c9c9;
-    font-size: 1.4em;
-    color: #489890;
-    margin-bottom: 30px;
+
 }
 
 .rightOptions .outer .tab .info {
     background-color: #fff;
+}
+
+.rightOptions .outer .tab a.icon {
+    height: 25px;
+    width: 25px;
+    margin: 40px 0 0 0;
+    display: block;
+    background-repeat: no-repeat;
+    background-size: contain;
+    float: left;
+}
+
+.rightOptions .outer .tab a.icon.filter {
+    background-image: url('../Images/Icons/filter.png');
 }
 
 .rightOptions .outer .info p.icon {
@@ -479,8 +560,8 @@ p.inputLabel {
 }
 
 .mainSection .bottomOptions {
-    height: 60px;
-    background-color: #c9c9c9;
+    height: 70px;
+    background-color: #9E9E9E;
     color: #489890;
     bottom: 0;
     position: absolute;
@@ -488,11 +569,18 @@ p.inputLabel {
     text-align:center;
 }
 
+.mainSection .bottomOptions ul {
+    padding-left: 0;
+    margin-top: 10px;
+}
+
 .mainSection .bottomOptions ul li {
     float: left;
     color: #fff;
     margin-right: 20px;
     font-size: 0.8em;
+    width: 50px;
+    cursor: pointer;
 }
 
 
@@ -570,6 +658,19 @@ p.inputLabel {
 
 .pageListing .listingHeader a.icon.filter {
     background-image: url('../Images/Icons/filter.png');
+}
+
+ul.itemInfo {
+    padding: 0 3px 0 0;
+}
+
+ul.itemInfo li {
+    margin-bottom: 20px;
+    font-size: 1.1em;
+}
+
+ul.itemInfo li label {
+    font-size: 1.1em;
 }
 
 /****************** END PAGES ******************/

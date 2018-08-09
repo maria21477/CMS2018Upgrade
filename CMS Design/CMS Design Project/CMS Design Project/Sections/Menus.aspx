@@ -19,7 +19,9 @@
     </div>
     <div class="rightOptions">
         <div class="outer">
-            <div class="tab" style="display:none;"><a href="javascript://">Information</a></div>
+            <ul class="tabs">
+                <li class="tab information" style="display:none;" data-ot="Information"><a href="javascript://">i</a></li>
+            </ul>
             <div class="info">
                 <h3>Information</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut luctus sodales pretium. Donec malesuada bibendum lacinia. Aliquam ac placerat diam. Quisque ut justo eu eros finibus placerat. Integer sagittis euismod pretium. Donec ut turpis dolor. Nulla imperdiet ipsum risus, eu porta justo lobortis eu. Praesent orci eros, consectetur eu vulputate ac, aliquet ut lectus.</p>

@@ -8,11 +8,13 @@
     // Set width of the bottom options panel
     $('.mainSection .bottomOptions').outerHeight({ width: $(window).innerWidth() - 161 + 'px' });
 
+    
     $(window).resize(function () {
         $('.mainMenu, .secondaryMenu').outerHeight($(window).innerHeight() - $('.header').outerHeight() + 'px');
         $('.rightOptions, .rightOptions .inner').outerHeight($(window).innerHeight() - $('.header').outerHeight() + 'px');
         $('.mainSection').outerHeight($(window).innerHeight() - $('.header').outerHeight() + 'px');
         $('.mainSection .bottomOptions').css({ width: $(window).innerWidth() - 161 + 'px' });
+
     });
 
     // Toggle hints

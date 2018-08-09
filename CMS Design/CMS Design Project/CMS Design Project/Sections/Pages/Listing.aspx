@@ -18,8 +18,10 @@
     </div>
     <div class="rightOptions">
         <div class="outer">
-            <div class="tab information" style="display:none;"><a href="javascript://">Information</a></div>
-            <div class="tab filter" style="display:none;"><a href="javascript://">Filter</a></div>
+            <ul class="tabs">
+                <li class="tab information" style="display:none;" data-ot="Information"><a href="javascript://">i</a></li>
+                <li class="tab filter" style="display:none;" data-ot="filter"><a id="hrefFilterTab" href="javascript://" class="icon filter"></a></li>
+            </ul>
             <div class="info">
                 <h3>Information</h3>
                 <p class="icon"><img src="../../Images/Icons/info/pages.png" /></p>
@@ -54,6 +56,26 @@
                             <div class="thumbnail" style="background-image:url('/Images/Thumbnails/yin_yang_flowers.jpg')"></div>
                         </div>
                     </div>
+                    <ul class="itemInfo">
+                        <li>
+                            <label>Status</label><br />
+                            Active
+                        </li>
+                        <li>
+                            <label>Attached Menu Item</label><br />
+                            Main Menu - Classes - Vinyasa<br />
+                            <span class="italic">[Secondary]</span>
+                        </li>
+                        <li>
+                            <label>Url</label><br />
+                            /power_yoga
+                        </li>
+                        <li>
+                            <label>Summary</label><br />
+                            Sed non nulla a sapien sollicitudin dictum sed eget lectus. Praesent scelerisque diam eu est scelerisque, non finibus diam ullamcorper. Sed sit amet dolor sed ipsum accumsan lobortis. Praesent a ligula...
+                        </li>
+                        
+                    </ul>
                 </div>
                 
             </div>
@@ -108,8 +130,8 @@
         </div>
         <div class="bottomOptions" style="display: none;">
             <ul>
-                <li>Edit</li>
-                <li>Delete</li>
+                <li><img src="../../Images/Icons/edit.png" alt="Edit" />Edit</li>
+                <li><img src="../../Images/Icons/delete.png" alt="Delete" />Delete</li>
             </ul>
         </div>
     </div>

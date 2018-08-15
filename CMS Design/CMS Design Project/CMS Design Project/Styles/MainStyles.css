@@ -241,7 +241,7 @@ p.inputLabel {
 
 }
 
-.header {
+.mainContainer .header {
     background-color: #489890;
     color: #fff;
     width: 98%;
@@ -695,8 +695,70 @@ ul.itemInfo li label {
     border: solid 1px #c9c9c9;
 }
 
+.section .header {
+    display: inline-block;
+    position: relative;
+    background-color: #489890;
+    color: #fff;
+    width: 100%;
+    padding: 10px 0;
+}
+
+.section .header.selected {
+    background-color: #6D348D;
+}
+
+.section .header .iconContainer {
+    width: 100%;
+}
+
+.section .header .iconContainer .icon {
+    float: right;
+    height: 40px;
+    width: 40px;
+    margin-right: 10px;
+}
+
+.section .header .iconContainer .icon.add {
+    background-image: url('../Images/Icons/add_item_selected.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.rightOptions .inner ul.widgetList
+{
+    padding: 0 20px;
+}
+
+.rightOptions .inner ul.widgetList li {
+    border: solid 1px #489890;
+    color: #489890;
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 12px;
+    font-size: 1.3em;
+    cursor: pointer;
+}
 
 /****************** END PAGES ******************/
+/****************** WIDGETS ******************/
+
+.widgetContainer .widgetContent.empty {
+    border: solid 2px #489890;
+    border-radius: 5px;
+    color: #489890;
+    height: 180px;
+    padding-top: 150px;
+    text-align: center;
+    font-size: 1.2em;
+    cursor: pointer;
+    margin: 5px;
+}
+
+
+
+/****************** END WIDGETS ******************/
 
 /****************** MENUS ******************/
 

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPages/SiteMaster.master" AutoEventWireup="true" CodeFile="Edit.aspx.cs" Inherits="Sections_Pages_Edit" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPages/SiteMaster.master" AutoEventWireup="true" CodeFile="EditWithWidgets.aspx.cs" Inherits="Sections_Pages_EditWithWidgets" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
@@ -117,12 +117,10 @@
                     </div>
                     <div class="content">
                         <div class="widgetContainer">
-                            <div class="widgetHeader"></div>
-                            <div class="eventListContainer"></div>
-                        </div>
-                        <div class="widgetContainer">
-                            <div class="widgetHeader"></div>
-                            <div class="productListContainer"></div>
+                            <div class="widgetHeader">
+                                <a href="javascript://" class="delete">X</a>
+                            </div>
+                            <div class="widgetContent empty" data-widget-type="html">Configure Html Widget</div>
                         </div>
                     </div>
                 </div>
@@ -186,6 +184,64 @@
                 // Close right bar
                 $('#divSelectWidget').hide();
                 $('#divPageInfo').show();
+            });
+
+            // Remove widget
+            $('.widgetHeader a.delete').click(function () {
+
+                var overlayParams = {};
+                var contentParams = {};
+
+                contentParams.Title = 'Delete Widget';
+                contentParams.Message = 'Are you sure you want to delete this widget?  This action cannot be undone.';
+                contentParams.ConfirmBtnParams = {};
+                contentParams.ConfirmBtnParams.Btn = $(this);
+                contentParams.ConfirmBtnCallback = function (params) {
+
+                    var deleteBtn = params.Btn;
+
+                    // Remove widget
+                    deleteBtn.parents('.widgetContainer').remove();
+
+                    // Close overlay
+                    overlay.Close();
+                };
+
+                overlayParams.Content = overlay.GetContent("CONFIRMATION", contentParams);
+                overlay.Open(overlayParams);
+
+            });
+
+            // Edit different widgets
+            $('.widgetContent').click(function () {
+
+                // highlight widget
+                $(this).addClass('selected');
+
+                // Different actions depending on the type of widget
+                switch ($(this).attr('data-widget-type')) {
+
+                    case 'html':
+
+                        // Show tinymce in an overlay
+                        var overlayParams = {};
+                        var contentParams = {};
+
+                        contentParams.Title = 'Edit Content';
+                        contentParams.Widget = $(this);
+                        
+                        overlayParams.Content = overlay.GetContent("TINYMCE", contentParams);
+                        overlayParams.Callback = function () {
+                            tinymce.init({
+                                selector: '#txtTinyMce'
+                            });
+                        };
+
+                        overlay.Open(overlayParams);
+
+                        break;
+                }
+
             });
         });
         //]]>

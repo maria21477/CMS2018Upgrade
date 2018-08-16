@@ -175,10 +175,13 @@ var overlay = new function () {
 
         switch (code) {
 
-            case "CONFIRMATION":
+            case 'CONFIRMATION':
                 content = overlay.BuildConfirmationContent(contentParams);
                 break;
 
+            case 'TINYMCE':
+                content = overlay.BuildTinyMCEArea(contentParams);
+                break;
         }
 
         return content;
@@ -330,6 +333,53 @@ var overlay = new function () {
         });
         buttonContainer.append(cancelBtn);
 
+        contentContainer.append(buttonContainer);
+
+        return contentContainer;
+    }
+
+    // Builds  area containing a tiny mce text area
+    this.BuildTinyMCEArea = function (params) {
+
+        var widget = null;
+
+        if (params !== undefined && params != null) {
+            widget = params.Widget;
+        }
+
+        var contentContainer = $('<div></div>');
+        var buttonContainer = $('<div class="buttonContainer"></div>');
+        var button = '<a href="javascript://" class="button"></a>';
+
+        var textArea = $('<textarea id="txtTinyMce"></textarea>');
+        var saveBtn = $(button);
+        var cancelBtn = $(button);
+
+        saveBtn.html('Save');
+        cancelBtn.html('Cancel');
+
+        cancelBtn.click(function () {
+
+            // Close without saving
+            overlay.Close();
+        });
+
+        saveBtn.bind('click', { Widget: widget}, function (e) {
+
+            // Remove empty class from widget
+            e.data.Widget.removeClass('empty');
+
+            // Set widget html to be the contents of the textarea
+            e.data.Widget.html(textArea.html());
+
+            // Close the overlay
+            overlay.Close();
+        });
+
+        buttonContainer.append(saveBtn);
+        buttonContainer.append(cancelBtn);
+
+        contentContainer.append(textArea);
         contentContainer.append(buttonContainer);
 
         return contentContainer;

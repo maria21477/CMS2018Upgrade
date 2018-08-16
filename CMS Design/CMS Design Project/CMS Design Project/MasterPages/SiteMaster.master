@@ -19,6 +19,7 @@
     <script src="/Scripts/Plugins/adapter-jquery.js" type="text/javascript"></script>
     <script src="/Scripts/Plugins/dropzone.js" type="text/javascript"></script>
     <script src="/Scripts/Plugins/dropzone-amd-module.js" type="text/javascript"></script>
+    <script src="/tinymce/js/tinymce/tinymce.min.js" type="text/javascript"></script>
 
     <script type="text/javascript" src="/Scripts/functions.js"></script>
     

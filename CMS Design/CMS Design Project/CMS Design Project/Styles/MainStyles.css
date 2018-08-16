@@ -744,9 +744,16 @@ ul.itemInfo li label {
 /****************** END PAGES ******************/
 /****************** WIDGETS ******************/
 
-.widgetContainer .widgetContent.empty {
+.widgetContainer .widgetContent {
     border: solid 2px #489890;
     border-radius: 5px;
+}
+
+.widgetContainer .widgetContent.selected {
+    border: solid 2px #6D348D;
+}
+
+.widgetContainer .widgetContent.empty {
     color: #489890;
     height: 180px;
     padding-top: 150px;
@@ -756,6 +763,18 @@ ul.itemInfo li label {
     margin: 5px;
 }
 
+.widgetContainer .widgetHeader a.delete {
+    border: solid 2px #489890;
+    border-radius: 15px;
+    background-color: #fff;
+    right: 0;
+    top: 61px;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+
+}
 
 
 /****************** END WIDGETS ******************/

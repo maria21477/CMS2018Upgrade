@@ -130,7 +130,7 @@
         </div>
         <div class="bottomOptions" style="display: none;">
             <ul>
-                <li><img src="../../Images/Icons/edit.png" alt="Edit" />Edit</li>
+                <li id="liEdit"><img src="../../Images/Icons/edit.png" alt="Edit" />Edit</li>
                 <li><img src="../../Images/Icons/delete.png" alt="Delete" />Delete</li>
             </ul>
         </div>
@@ -139,6 +139,10 @@
         //<![CDATA[
         $(document).ready(function () {
             pageFunctions.pageListingReady();
+
+            $('#liEdit').click(function () {
+                window.location.href = '/Sections/Pages/EditWithWidgets.aspx'
+            });
         });
         //]]
     </script>

@@ -347,7 +347,7 @@ var overlay = new function () {
             widget = params.Widget;
         }
 
-        var contentContainer = $('<div></div>');
+        var contentContainer = $('<div class="tinymceContainer"></div>');
         var buttonContainer = $('<div class="buttonContainer"></div>');
         var button = '<a href="javascript://" class="button"></a>';
 
@@ -366,11 +366,11 @@ var overlay = new function () {
 
         saveBtn.bind('click', { Widget: widget}, function (e) {
 
-            // Remove empty class from widget
-            e.data.Widget.removeClass('empty');
+            // Remove empty and selected classes from widget
+            e.data.Widget.removeClass('empty').removeClass('selected');
 
             // Set widget html to be the contents of the textarea
-            e.data.Widget.html(textArea.html());
+            e.data.Widget.html(tinymce.activeEditor.getContent($('#txtTinyMce')));
 
             // Close the overlay
             overlay.Close();
@@ -383,6 +383,60 @@ var overlay = new function () {
         contentContainer.append(buttonContainer);
 
         return contentContainer;
+    }
+
+    // Shows a list of uploaded resources.  Can be filtered by images or documents by default or by using dropdown at top of overlay
+    this.BuildAvailableResourceOverlay = function (resourceType) {
+
+        /***************
+         TEST DATA
+        ****************/
+        var folder = {};
+        folder.Folders = [];
+
+        var docFolder = {};
+        docFolder.Name = 'Documents';
+        docFolder.Folders = [];
+
+        var imgFolder = {};
+        imgFolder.Name = 'Images';
+        imgFolder.Folders = [];
+
+        folder.Folders[0] = docFolder;
+        folder.Folders[1] = imgFolder;
+
+        var wordFolder = {};
+        wordFolder.Folders = {};
+
+        var pdfFolder = {};
+        pdfFolder.Folders = [];
+
+        var xlsFolder = {};
+        xlsFolder.Folders = {}
+
+        docFolder.Folders[0] = wordFolder;
+        docFolder.Folders[1] = wordFolder;
+        docFolder.Folders[2] = wordFolder;
+
+        /***************
+         END TEST DATA
+        ****************/
+
+        var container = $('<div></div>');
+        var header = $('<div class="header row"></div>');
+        var folderContainer = $('<div class="folders"></div>');
+        var resourceContainer = $('<div class="resources"></div>');
+        var ddlResourceType = $('<select id="ddlResourceTypes"></select>');
+        
+
+        ddlResourceType.append('<option value="0">All</option>');
+        ddlResourceType.append('<option value="1">Images</option>');
+        ddlResourceType.append('<option value="2">Documents</option>');
+
+        header.append(ddlResourceType);
+
+        container.append(header);
+        container.append(folderContainer).append(resourceContainer);
     }
 }
 

@@ -170,6 +170,14 @@
                 var widgetName = $(this).html();
 
                 widgetContentHtml.html('Configure ' + widgetName + ' Widget');
+
+                // Add delete button to the widget header
+                var iconContainer = $('<div class="iconContainer"></div>');
+                var deleteIcon = $('<a href="javascript://" class="icon delete">X</a>');
+
+                iconContainer.append(deleteIcon);
+                widgetHeaderHtml.append(iconContainer);
+
                 widgetHtml.append(widgetHeaderHtml).append(widgetContentHtml);
 
                 // Add empty widget to section

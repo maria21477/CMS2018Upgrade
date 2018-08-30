@@ -155,3 +155,36 @@
         });
     }
 }
+
+var widgetFunctions = new function () {
+
+    this.configureHtmlWidget = function (widget) {
+
+        // Show tinymce in an overlay
+        var overlayParams = {};
+        var contentParams = {};
+
+        contentParams.Title = 'Edit Content';
+        contentParams.Widget = widget;
+
+        overlayParams.Content = overlay.GetContent("TINYMCE", contentParams);
+        overlayParams.Callback = function () {
+            tinymce.init({
+                selector: '#txtTinyMce',
+                plugins: 'link, image, lists, code',
+                toolbar: 'undo redo | styleselect | bold italic | bullist numlist | alignleft aligncenter alignright alignjustify | link unlink | image | code',
+                file_picker_types: 'image',
+                file_picker_callback: function (cb, value, meta) {
+                    var input = document.createElement('input');
+                    input.setAttribute('type', 'file');
+                    input.setAttribute('accept', 'image/*');
+
+
+                }
+            });
+        };
+
+        overlay.Open(overlayParams);
+
+    }
+}

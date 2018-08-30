@@ -683,7 +683,7 @@ ul.itemInfo li label {
 }
 
 .page .row.middle .columns.eight {
-    width: 65.34%;
+    width: 64.34%;
 }
 
 
@@ -744,6 +744,13 @@ ul.itemInfo li label {
 /****************** END PAGES ******************/
 /****************** WIDGETS ******************/
 
+.widgetContainer {
+    display: block;
+    position: relative;
+    width: 100%;
+    margin-top: 5px;
+}
+
 .widgetContainer .widgetContent {
     border: solid 2px #489890;
     border-radius: 5px;
@@ -751,6 +758,7 @@ ul.itemInfo li label {
 
 .widgetContainer .widgetContent.selected {
     border: solid 2px #6D348D;
+    padding: 10px;
 }
 
 .widgetContainer .widgetContent.empty {
@@ -768,7 +776,7 @@ ul.itemInfo li label {
     border-radius: 15px;
     background-color: #fff;
     right: 0;
-    top: 61px;
+    top: -5px;
     position: absolute;
     width: 20px;
     height: 20px;
@@ -776,6 +784,14 @@ ul.itemInfo li label {
 
 }
 
+.tinymceContainer {
+    width: 800px;
+    height: 500px;
+}
+
+div.mce-edit-area {
+    min-height: 325px;
+}
 
 /****************** END WIDGETS ******************/
 

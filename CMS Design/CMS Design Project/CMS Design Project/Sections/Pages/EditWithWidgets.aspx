@@ -61,14 +61,17 @@
                 <ul class="widgetList">
                     <li>Class List</li>
                     <li>Comments</li>
+                    <li>Contact List</li>
                     <li>Data</li>
                     <li>Event List</li>
                     <li>Filter</li>
                     <li>Gallery</li>
                     <li>Html</li>
                     <li>Product List</li>
+                    <li>Resource List</li>
                     <li>Scrolling Banner</li>
                     <li>Single Banner</li>
+                    <li>Staff List</li>
                     <li>Triple Banner</li>
                 </ul>
 
@@ -130,6 +133,9 @@
                             <a href="javascript://" class="icon add"></a>
                         </div>
                     </div>
+                    <div class="content">
+
+                    </div>
                 </div>
             </div>
             <div class="row bottom">
@@ -138,6 +144,9 @@
                         <div class="iconContainer">
                             <a href="javascript://" class="icon add"></a>
                         </div>
+                    </div>
+                    <div class="content">
+
                     </div>
                 </div>
             </div>
@@ -223,22 +232,7 @@
 
                     case 'html':
 
-                        // Show tinymce in an overlay
-                        var overlayParams = {};
-                        var contentParams = {};
-
-                        contentParams.Title = 'Edit Content';
-                        contentParams.Widget = $(this);
-                        
-                        overlayParams.Content = overlay.GetContent("TINYMCE", contentParams);
-                        overlayParams.Callback = function () {
-                            tinymce.init({
-                                selector: '#txtTinyMce'
-                            });
-                        };
-
-                        overlay.Open(overlayParams);
-
+                        widgetFunctions.configureHtmlWidget($(this));
                         break;
                 }
 

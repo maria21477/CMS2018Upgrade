@@ -795,6 +795,34 @@ div.mce-edit-area {
 
 /****************** END WIDGETS ******************/
 
+/****************** RESOURCES ******************/
+
+.overlayContainerInner .resources {
+    width: 850px;
+    height: 500px;
+}
+
+.overlayContainerInner .resources .mainArea .files {
+    height: 450px;
+}
+
+.overlayContainerInner .resources .mainArea .thumbnailHolder {
+    border: solid 1px #808080;
+    padding: 3px;
+    float: left;
+    margin: 0 8px 8px 0;
+}
+
+.overlayContainerInner .resources .mainArea .thumbnailHolder .thumbnail {
+    height: 120px;
+    width: 120px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/****************** END RESOURCES ******************/
+
 /****************** MENUS ******************/
 
 ul.itemsContainer { 

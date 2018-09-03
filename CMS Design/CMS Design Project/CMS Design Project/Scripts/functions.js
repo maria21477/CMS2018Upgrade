@@ -385,59 +385,7 @@ var overlay = new function () {
         return contentContainer;
     }
 
-    // Shows a list of uploaded resources.  Can be filtered by images or documents by default or by using dropdown at top of overlay
-    this.BuildAvailableResourceOverlay = function (resourceType) {
-
-        /***************
-         TEST DATA
-        ****************/
-        var folder = {};
-        folder.Folders = [];
-
-        var docFolder = {};
-        docFolder.Name = 'Documents';
-        docFolder.Folders = [];
-
-        var imgFolder = {};
-        imgFolder.Name = 'Images';
-        imgFolder.Folders = [];
-
-        folder.Folders[0] = docFolder;
-        folder.Folders[1] = imgFolder;
-
-        var wordFolder = {};
-        wordFolder.Folders = {};
-
-        var pdfFolder = {};
-        pdfFolder.Folders = [];
-
-        var xlsFolder = {};
-        xlsFolder.Folders = {}
-
-        docFolder.Folders[0] = wordFolder;
-        docFolder.Folders[1] = wordFolder;
-        docFolder.Folders[2] = wordFolder;
-
-        /***************
-         END TEST DATA
-        ****************/
-
-        var container = $('<div></div>');
-        var header = $('<div class="header row"></div>');
-        var folderContainer = $('<div class="folders"></div>');
-        var resourceContainer = $('<div class="resources"></div>');
-        var ddlResourceType = $('<select id="ddlResourceTypes"></select>');
-        
-
-        ddlResourceType.append('<option value="0">All</option>');
-        ddlResourceType.append('<option value="1">Images</option>');
-        ddlResourceType.append('<option value="2">Documents</option>');
-
-        header.append(ddlResourceType);
-
-        container.append(header);
-        container.append(folderContainer).append(resourceContainer);
-    }
+    
 }
 
 var ToolTip = new function () {

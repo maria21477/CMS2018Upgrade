@@ -158,7 +158,7 @@
 
 var widgetFunctions = new function () {
 
-    this.configureHtmlWidget = function (widget) {
+    this.ConfigureHtmlWidget = function (widget) {
 
         // Show tinymce in an overlay
         var overlayParams = {};

@@ -93,7 +93,7 @@
                     <div class="content">
                         <div class="widgetContainer">
                             <div class="widgetHeader"></div>
-                            <div class="bannerContainer"></div>
+                            <div class="widgetContent empty" data-widget-type="single-banner">Configure Single Banner Widget</div>
                         </div>
                     </div>
                 </div>
@@ -156,6 +156,59 @@
                 <li><a href="Edit.aspx">Edit</a></li>
                 <li><a href="javascript://">Delete</a></li>
             </ul>
+        </div>
+    </div>
+    <div id="divResourceOverlay" style="display: none;">
+        <div class="resources">
+            <div class="header row">
+                     <div class="formContainer">
+                         <select id="ddlResourceTypes">
+                             <option value="0">All Resources</option>
+                             <option value="1">Images Only</option>
+                             <option value="2">Documents Only</option>
+                         </select>
+                     </div>   
+            </div>
+            <div class="row">
+                <div class="columns three folderList">
+                    <ul>
+                        <li><span class="folder"></span><a href="javascript://">Documents</a></li>
+                        <li><span class="folder"></span><a href="javascript://">Images</a></li>
+                    </ul>
+                </div>
+                <div class="columns nine mainArea">
+                    <div class="files row">
+                        <div class="thumbnailHolder">
+                            <div class="thumbnail" style="background-image:url('/Images/Thumbnails/beginners_course.jpg')"></div>
+                        </div>
+                        <div class="thumbnailHolder">
+                            <div class="thumbnail" style="background-image:url('/Images/Thumbnails/evening_tree.jpg')"></div>
+                        </div>
+                        <div class="thumbnailHolder">
+                            <div class="thumbnail" style="background-image:url('/Images/Thumbnails/relax.jpg')"></div>
+                        </div>
+                        <div class="thumbnailHolder">
+                            <div class="thumbnail" style="background-image:url('/Images/Thumbnails/singing_bowls.jpg')"></div>
+                        </div>
+                        <div class="thumbnailHolder">
+                            <div class="thumbnail" style="background-image:url('/Images/Thumbnails/teen_yoga.jpg')"></div>
+                        </div>
+                        <div class="thumbnailHolder">
+                            <div class="thumbnail" style="background-image:url('/Images/Thumbnails/yin_yang_flowers.jpg')"></div>
+                        </div>
+                        <div class="thumbnailHolder">
+                            <div class="thumbnail">Upload</div>
+                        </div>
+                    </div>
+                    <div class="row footer">
+                        <div class="formContainer">
+                            <input id="txtNewFolder" type="text" />
+                            <a href="javascript://" class="button inline">Add Folder</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
         </div>
     </div>
     <script type="text/javascript">
@@ -232,7 +285,13 @@
 
                     case 'html':
 
-                        widgetFunctions.configureHtmlWidget($(this));
+                        widgetFunctions.ConfigureHtmlWidget($(this));
+                        break;
+
+                    case 'single-banner':
+                        overlayParams = {};
+                        overlayParams.Content = $('#divResourceOverlay').html();
+                        overlay.Open(overlayParams);
                         break;
                 }
 

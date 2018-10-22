@@ -2,6 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <script type="text/javascript" src="../../Scripts/pageFunctions.js"></script>
+    <script type="text/javascript" src="../../Scripts/resourceFunctions.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <div class="mainMenu">
@@ -173,7 +174,19 @@
             <div class="row">
                 <div class="columns three folderList">
                     <ul>
-                        <li><a href="javascript://" class="folder">+</a><a href="javascript://">Documents</a></li>
+                        <li>
+                            <a href="javascript://" class="folder">+</a><a href="javascript://">Documents</a>
+                            <ul style="display: none;">
+                                <li><a href="javascript://">Specifications</a></li>
+                                <li>
+                                    <a href="javascript://" class="folder">+</a><a href="javascript://">Staff Info</a>
+                                    <ul style="display: none;">
+                                        <li><a href="javascript://">Handbooks</a></li>
+                                        <li><a href="javascript://">Disciplinary Procedures</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
                         <li><a href="javascript://" class="folder">+</a><a href="javascript://">Images</a></li>
                     </ul>
                 </div>
@@ -215,88 +228,7 @@
     <script type="text/javascript">
     //<![CDATA[
         $(document).ready(function () {
-            $('.section .header .iconContainer .icon.add').click(function () {
-                $('.section .header.selected').removeClass('selected');
-                $(this).parents('.header').addClass('selected')
-                $('#divPageInfo').hide();
-                $('#divSelectWidget').show();
-            });
-
-            $('.rightOptions .inner ul.widgetList li').click(function () {
-
-                var widgetHtml = $('<div class="widgetContainer"></div>');
-                var widgetHeaderHtml = $('<div class="widgetHeader"></div>');
-                var widgetContentHtml = $('<div class="widgetContent empty"></div>');
-
-                var widgetName = $(this).html();
-
-                widgetContentHtml.html('Configure ' + widgetName + ' Widget');
-                widgetHtml.append(widgetHeaderHtml).append(widgetContentHtml);
-
-                // Add empty widget to section
-
-                $('.section .header.selected').siblings('.content').append(widgetHtml);
-            });
-
-            // Close widget selection right bar
-            $('#hrefCloseWidgetSelection').click(function () {
-
-                // Deselect selected area
-                $('.section .header.selected').removeClass('selected');
-
-                // Close right bar
-                $('#divSelectWidget').hide();
-                $('#divPageInfo').show();
-            });
-
-            // Remove widget
-            $('.widgetHeader a.delete').click(function () {
-
-                var overlayParams = {};
-                var contentParams = {};
-
-                contentParams.Title = 'Delete Widget';
-                contentParams.Message = 'Are you sure you want to delete this widget?  This action cannot be undone.';
-                contentParams.ConfirmBtnParams = {};
-                contentParams.ConfirmBtnParams.Btn = $(this);
-                contentParams.ConfirmBtnCallback = function (params) {
-
-                    var deleteBtn = params.Btn;
-
-                    // Remove widget
-                    deleteBtn.parents('.widgetContainer').remove();
-
-                    // Close overlay
-                    overlay.Close();
-                };
-
-                overlayParams.Content = overlay.GetContent("CONFIRMATION", contentParams);
-                overlay.Open(overlayParams);
-
-            });
-
-            // Edit different widgets
-            $('.widgetContent').click(function () {
-
-                // highlight widget
-                $(this).addClass('selected');
-
-                // Different actions depending on the type of widget
-                switch ($(this).attr('data-widget-type')) {
-
-                    case 'html':
-
-                        widgetFunctions.ConfigureHtmlWidget($(this));
-                        break;
-
-                    case 'single-banner':
-                        overlayParams = {};
-                        overlayParams.Content = $('#divResourceOverlay').html();
-                        overlay.Open(overlayParams);
-                        break;
-                }
-
-            });
+            widgetFunctions.PageWidgetsReady();
         });
         //]]>
     </script>

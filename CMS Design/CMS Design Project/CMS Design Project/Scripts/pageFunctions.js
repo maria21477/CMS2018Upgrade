@@ -158,6 +158,94 @@
 
 var widgetFunctions = new function () {
 
+    this.PageWidgetsReady = function () {
+        $('.section .header .iconContainer .icon.add').click(function () {
+            $('.section .header.selected').removeClass('selected');
+            $(this).parents('.header').addClass('selected')
+            $('#divPageInfo').hide();
+            $('#divSelectWidget').show();
+        });
+
+        $('.rightOptions .inner ul.widgetList li').click(function () {
+
+            var widgetHtml = $('<div class="widgetContainer"></div>');
+            var widgetHeaderHtml = $('<div class="widgetHeader"></div>');
+            var widgetContentHtml = $('<div class="widgetContent empty"></div>');
+
+            var widgetName = $(this).html();
+
+            widgetContentHtml.html('Configure ' + widgetName + ' Widget');
+            widgetHtml.append(widgetHeaderHtml).append(widgetContentHtml);
+
+            // Add empty widget to section
+
+            $('.section .header.selected').siblings('.content').append(widgetHtml);
+        });
+
+        // Close widget selection right bar
+        $('#hrefCloseWidgetSelection').click(function () {
+
+            // Deselect selected area
+            $('.section .header.selected').removeClass('selected');
+
+            // Close right bar
+            $('#divSelectWidget').hide();
+            $('#divPageInfo').show();
+        });
+
+        // Remove widget
+        $('.widgetHeader a.delete').click(function () {
+
+            var overlayParams = {};
+            var contentParams = {};
+
+            contentParams.Title = 'Delete Widget';
+            contentParams.Message = 'Are you sure you want to delete this widget?  This action cannot be undone.';
+            contentParams.ConfirmBtnParams = {};
+            contentParams.ConfirmBtnParams.Btn = $(this);
+            contentParams.ConfirmBtnCallback = function (params) {
+
+                var deleteBtn = params.Btn;
+
+                // Remove widget
+                deleteBtn.parents('.widgetContainer').remove();
+
+                // Close overlay
+                overlay.Close();
+            };
+
+            overlayParams.Content = overlay.GetContent("CONFIRMATION", contentParams);
+            overlay.Open(overlayParams);
+
+        });
+
+        // Edit different widgets
+        $('.widgetContent').click(function () {
+
+            // highlight widget
+            $(this).addClass('selected');
+
+            // Different actions depending on the type of widget
+            switch ($(this).attr('data-widget-type')) {
+
+                case 'html':
+
+                    widgetFunctions.ConfigureHtmlWidget($(this));
+                    break;
+
+                case 'single-banner':
+                    overlayParams = {};
+                    overlayParams.Content = $('#divResourceOverlay').html();
+                    overlayParams.Callback = function () {
+                        resourceFunctions.ResourceOverlayReady();
+                    }
+                    overlay.Open(overlayParams);
+                    break;
+            }
+
+        });
+    }
+
     this.ConfigureHtmlWidget = function (widget) {
 
         // Show tinymce in an overlay

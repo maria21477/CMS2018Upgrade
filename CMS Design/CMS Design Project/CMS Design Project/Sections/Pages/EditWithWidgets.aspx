@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPages/SiteMaster.master" AutoEventWireup="true" CodeFile="EditWithWidgets.aspx.cs" Inherits="Sections_Pages_EditWithWidgets" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+    <script type="text/javascript" src="../../Scripts/pageFunctions.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <div class="mainMenu">
@@ -172,8 +173,8 @@
             <div class="row">
                 <div class="columns three folderList">
                     <ul>
-                        <li><span class="folder"></span><a href="javascript://">Documents</a></li>
-                        <li><span class="folder"></span><a href="javascript://">Images</a></li>
+                        <li><a href="javascript://" class="folder">+</a><a href="javascript://">Documents</a></li>
+                        <li><a href="javascript://" class="folder">+</a><a href="javascript://">Images</a></li>
                     </ul>
                 </div>
                 <div class="columns nine mainArea">
@@ -197,7 +198,7 @@
                             <div class="thumbnail" style="background-image:url('/Images/Thumbnails/yin_yang_flowers.jpg')"></div>
                         </div>
                         <div class="thumbnailHolder">
-                            <div class="thumbnail">Upload</div>
+                            <div class="thumbnail upload">Upload</div>
                         </div>
                     </div>
                     <div class="row footer">

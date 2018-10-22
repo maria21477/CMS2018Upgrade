@@ -754,6 +754,7 @@ ul.itemInfo li label {
 .widgetContainer .widgetContent {
     border: solid 2px #489890;
     border-radius: 5px;
+    padding: 10px;
 }
 
 .widgetContainer .widgetContent.selected {
@@ -802,6 +803,10 @@ div.mce-edit-area {
     height: 500px;
 }
 
+.overlayContainerInner .resources .header .formContainer select {
+    font-size: 0.75em;
+}
+
 .overlayContainerInner .resources .mainArea .files {
     height: 450px;
 }
@@ -819,6 +824,39 @@ div.mce-edit-area {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    cursor: pointer;
+}
+
+.overlayContainerInner .resources .mainArea .thumbnailHolder .thumbnail.upload {
+    text-align: center;
+    font-size: 0.85em;
+    padding-top: 45px;
+    height: 75px;
+}
+
+.overlayContainerInner .resources .mainArea .footer .formContainer input {
+    font-size: 0.8em;
+}
+
+.overlayContainerInner .resources .mainArea .footer .formContainer .button.inline {
+    font-size: 0.85em;
+    position: relative;
+    top: -6px;
+}
+
+.overlayContainerInner .folderList ul {
+    padding-left: 0;
+}
+
+.overlayContainerInner .folderList ul li a {
+    font-size: 0.75em;
+    color: #4e4e4e;
+}
+
+.overlayContainerInner .folderList ul li a.folder {
+    margin-right: 10px;
+    margin-left: 5px;
+    font-size: 1em;
 }
 
 /****************** END RESOURCES ******************/

@@ -18,18 +18,20 @@
         </ul>
     </div>
     <div class="mainSection">
-        <!-- Initial Message for multiple sites -->
-        <div class="welcome">
-            <h1>Welcome</h1>
-            <h2>You are currently managing the following site:</h2>
-            <p class="siteName">Test Site</p>
-            <p>You can change the site at the top of the screen.</p>
-            <p>To continue, select one of the options on the left or view the documentation using the link at the top of the screen.</p>
-        </div>
+        <div class="mainSectionInner">
+            <!-- Initial Message for multiple sites -->
+            <div class="welcome">
+                <h1>Welcome</h1>
+                <h2>You are currently managing the following site:</h2>
+                <p class="siteName">Test Site</p>
+                <p>You can change the site at the top of the screen.</p>
+                <p>To continue, select one of the options on the left or view the documentation using the link at the top of the screen.</p>
+            </div>
 
-        <div class="welcome" style="display:none;">
-            <h1>Welcome</h1>
-            <p>Please select one of the options from the left to begin or view the documentation using the link at the top of the screen.</p>
+            <div class="welcome" style="display:none;">
+                <h1>Welcome</h1>
+                <p>Please select one of the options from the left to begin or view the documentation using the link at the top of the screen.</p>
+            </div>
         </div>
     </div>
     <div class="rightOptions" style="display:none;">

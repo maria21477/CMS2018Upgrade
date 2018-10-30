@@ -15,5 +15,11 @@
                 $(this).siblings('ul').show();
             }
         });
+
+        $('.overlayContainerInner .folderList ul li a.folderName').click(function () {
+
+            $('.overlayContainerInner .folderList ul li a.folderName.selected').removeClass('selected');
+            $(this).addClass('selected');
+        });
     }
 }

@@ -377,6 +377,7 @@ p.inputLabel {
     z-index: 10;
     position: relative;
     background-color: #fff;
+    overflow: auto;
 }
 
 .rightOptions .outer {
@@ -534,10 +535,19 @@ p.inputLabel {
     background-image: url('../Images/Icons/Item/unlink_disabled.png');
 }
 
+.main {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
 
-.mainSection { 
-    overflow: auto;
-    padding: 50px;
+.mainSection {
+    position: relative;
+    overflow: hidden;
+}
+
+.mainSection .mainSectionInner { 
+    margin: 50px;
 }
 
 .mainSection .welcome {
@@ -844,8 +854,18 @@ div.mce-edit-area {
     top: -6px;
 }
 
+.overlayContainerInner .folderList {
+    height: 510px;
+    overflow: auto;
+}
+
 .overlayContainerInner .folderList ul {
     padding-left: 0;
+    margin-left: 22px;
+}
+
+.overlayContainerInner .folderList ul:first-child {
+    margin-left: 0;
 }
 
 .overlayContainerInner .folderList ul li a {
@@ -857,6 +877,14 @@ div.mce-edit-area {
     margin-right: 10px;
     margin-left: 5px;
     font-size: 1em;
+}
+
+.overlayContainerInner .folderList ul li a.folderName:hover {
+    text-decoration: underline;
+}
+
+.overlayContainerInner .folderList ul li a.folderName.selected {
+    font-weight: bold;
 }
 
 /****************** END RESOURCES ******************/

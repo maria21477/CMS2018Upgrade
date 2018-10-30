@@ -257,6 +257,7 @@ var widgetFunctions = new function () {
 
         overlayParams.Content = overlay.GetContent("TINYMCE", contentParams);
         overlayParams.Callback = function () {
+            tinymce.remove();
             tinymce.init({
                 selector: '#txtTinyMce',
                 plugins: 'link, image, lists, code',

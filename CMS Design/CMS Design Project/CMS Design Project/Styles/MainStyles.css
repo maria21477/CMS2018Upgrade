@@ -757,42 +757,172 @@ ul.itemInfo li label {
 .widgetContainer {
     display: block;
     position: relative;
-    width: 100%;
-    margin-top: 5px;
+    margin: 12px 5px 5px 5px;
+    border: solid 2px #489890;
+    border-radius: 5px;
 }
 
 .widgetContainer .widgetContent {
-    border: solid 2px #489890;
-    border-radius: 5px;
-    padding: 10px;
-}
-
-.widgetContainer .widgetContent.selected {
-    border: solid 2px #6D348D;
-    padding: 10px;
-}
-
-.widgetContainer .widgetContent.empty {
+    
+    padding: 20px;
+    min-height: 300px;
     color: #489890;
-    height: 180px;
-    padding-top: 150px;
     text-align: center;
     font-size: 1.2em;
-    cursor: pointer;
     margin: 5px;
 }
 
-.widgetContainer .widgetHeader a.delete {
+.widgetContainer.selected {
+    border-color: #6D348D;
+}
+
+.widgetContainer a.delete {
     border: solid 2px #489890;
     border-radius: 15px;
     background-color: #fff;
-    right: 0;
-    top: -5px;
+    right: -8px;
+    top: -10px;
     position: absolute;
     width: 20px;
     height: 20px;
     text-align: center;
+    color: #489890;
+}
 
+.widgetContainer.selected a.delete {
+    border-color: #6D348D;
+    color: #6D348D;
+}
+
+.widgetContainer .thumbnailContainer {
+    position: relative;
+    display: inline-block;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.widgetContainer .thumbnailContainer .thumbnail {
+    border: solid 2px #489890;
+}
+
+.widgetContainer .thumbnailContainer.banner .thumbnail {
+    height: 75px;
+    width: 150px;
+}
+
+.widgetContainer .thumbnailContainer.banner .thumbnail.iconContainer,
+.widgetContainer .thumbnailContainer.html .thumbnail.iconContainer {
+    width: 75px;
+    border-style: dashed;
+}
+
+.widgetContainer .thumbnailContainer.product .thumbnail.iconContainer {
+    width: 120px;
+    border-style: dashed;
+    height: 130px;
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    padding-top: 40px;
+}
+
+.widgetContainer .thumbnailContainer.banner.triple.large .thumbnail
+{
+    height: 120px;
+    width: 200px;
+}
+
+.widgetContainer .thumbnailContainer.banner.triple.small
+{
+    width: 75px;
+}
+
+.widgetContainer .thumbnailContainer.banner.triple.small .thumbnail
+{
+    height: 33px;
+}
+
+.widgetContainer .thumbnailContainer.banner .thumbnail.iconContainer.add,
+.widgetContainer .thumbnailContainer.html .thumbnail.iconContainer.add
+{
+    padding: 23px;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.widgetContainer .thumbnailContainer .thumbnail.iconContainer.add div {
+    height: 35px;
+    width: 35px;
+    float:left;
+}
+
+.widgetContainer .thumbnailContainer.banner.triple.large .thumbnail.iconContainer.add {
+    padding-left: 60px;
+    padding-right: 0;
+    padding-top: 11px;
+}
+
+.widgetContainer .thumbnailContainer.banner.triple.small .thumbnail.iconContainer.add {
+    padding-top: 10px;
+    padding-bottom: 30px;
+    padding-left: 40px;
+    padding-right: 20px;
+}
+
+.widgetContainer .thumbnailContainer.banner.triple.large .thumbnail.iconContainer.add div {
+    height: 66px;
+    width: 66px;
+    float:left;
+}
+
+.widgetContainer .thumbnailContainer.banner.triple.small .thumbnail.iconContainer.add div {
+    height: 25px;
+    width: 25px;
+    float:left;
+}
+
+.widgetContainer .thumbnailContainer .thumbnail.iconContainer.add .top.left {
+    border-right: solid 1px #489890;
+    border-bottom: solid 1px #489890;
+}
+
+.widgetContainer .thumbnailContainer .thumbnail.iconContainer.add .top.right {
+    border-left: solid 1px #489890;
+    border-bottom: solid 1px #489890;
+}
+
+.widgetContainer .thumbnailContainer .thumbnail.iconContainer.add .bottom.left {
+    border-right: solid 1px #489890;
+    border-top: solid 1px #489890;
+}
+
+.widgetContainer .thumbnailContainer .thumbnail.iconContainer.add .bottom.right {
+    border-left: solid 1px #489890;
+    border-top: solid 1px #489890;
+}
+
+.widgetContainer .widgetContent .widgetFooter {
+    position: absolute;
+    bottom: -1px;
+    left: -1px;
+    text-align: center;
+    width: 100%;
+    padding: 15px 0;
+    font-size: 0.8em;
+    background-color: #489890;
+    border-radius: 0 0 5px 5px;
+    border: solid 1px #489890;
+}
+
+.widgetContainer.selected .widgetContent .widgetFooter {
+    background-color: #6D348D;
+    border: solid 1px #6D348D;
+}
+
+.widgetContainer .widgetContent .widgetFooter .iconContainer a {
+    color: #fff;
+    margin-right: 20px
 }
 
 .tinymceContainer {

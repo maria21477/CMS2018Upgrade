@@ -171,10 +171,36 @@ var widgetFunctions = new function () {
             var widgetHtml = $('<div class="widgetContainer"></div>');
             var widgetHeaderHtml = $('<div class="widgetHeader"></div>');
             var widgetContentHtml = $('<div class="widgetContent empty"></div>');
+            var widgetRemoveIconHtml = $('<a href="javascript://" class="delete">X</a>');
 
             var widgetName = $(this).html();
 
-            widgetContentHtml.html('Configure ' + widgetName + ' Widget');
+            widgetContentHtml.html(widgetName);
+
+            widgetRemoveIconHtml.bind('click', {}, function () {
+                var overlayParams = {};
+                var contentParams = {};
+
+                contentParams.Title = 'Delete Widget';
+                contentParams.Message = 'Are you sure you want to delete this widget?  This action cannot be undone.';
+                contentParams.ConfirmBtnParams = {};
+                contentParams.ConfirmBtnParams.Btn = $(this);
+                contentParams.ConfirmBtnCallback = function (params) {
+
+                    var deleteBtn = params.Btn;
+
+                    // Remove widget
+                    deleteBtn.parents('.widgetContainer').remove();
+
+                    // Close overlay
+                    overlay.Close();
+                };
+
+                overlayParams.Content = overlay.GetContent("CONFIRMATION", contentParams);
+                overlay.Open(overlayParams);
+            });
+
+            widgetHeaderHtml.append(widgetRemoveIconHtml);
             widgetHtml.append(widgetHeaderHtml).append(widgetContentHtml);
 
             // Add empty widget to section
@@ -220,13 +246,16 @@ var widgetFunctions = new function () {
         });
 
         // Edit different widgets
-        $('.widgetContent').click(function () {
+        $('.widgetContent .thumbnailContainer .thumbnail .add').click(function () {
+
+            // Remove highlight from currently highlighted widget
+            $('.widgetContainer').removeClass('selected');
 
             // highlight widget
-            $(this).addClass('selected');
+            $(this).parents('.widgetContainer').addClass('selected');
 
             // Different actions depending on the type of widget
-            switch ($(this).attr('data-widget-type')) {
+            switch ($(this).parents('.widgetContent').attr('data-widget-type')) {
 
                 case 'html':
 

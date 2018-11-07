@@ -246,7 +246,7 @@ var widgetFunctions = new function () {
         });
 
         // Edit different widgets
-        $('.widgetContent .thumbnailContainer .thumbnail .add').click(function () {
+        $('.widgetContent .thumbnailContainer .thumbnail.add').click(function () {
 
             // Remove highlight from currently highlighted widget
             $('.widgetContainer').removeClass('selected');
@@ -271,6 +271,22 @@ var widgetFunctions = new function () {
                     overlay.Open(overlayParams);
                     break;
             }
+
+        });
+
+        $('.widgetContent .thumbnailContainer .thumbnail').click(function () {
+
+            // Remove highlighting from any other highlighted widgets
+            $('.widgetContainer').removeClass('selected');
+            $('.widgetContent .thumbnailContainer .thumbnail.selected').removeClass('selected');
+
+            // Highlight item and widget
+            $(this).addClass('selected');
+            $(this).parents('.widgetContainer').addClass('selected');
+
+            // Show options
+            $(this).parents('.widgetContent').children('.widgetFooter').show();
+            
 
         });
     }

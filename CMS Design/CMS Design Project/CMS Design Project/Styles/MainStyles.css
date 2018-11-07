@@ -803,25 +803,23 @@ ul.itemInfo li label {
 
 .widgetContainer .thumbnailContainer .thumbnail {
     border: solid 2px #489890;
+    cursor: pointer;
+}
+
+.widgetContainer .thumbnailContainer .thumbnail.selected{
+    border-color: #6D348D;
 }
 
 .widgetContainer .thumbnailContainer.banner .thumbnail {
-    height: 75px;
-    width: 150px;
+    height: 155px;
+    width: 260px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
-.widgetContainer .thumbnailContainer.banner .thumbnail.iconContainer,
-.widgetContainer .thumbnailContainer.html .thumbnail.iconContainer,
-.widgetContainer .thumbnailContainer.filter .thumbnail.iconContainer,
-.widgetContainer .thumbnailContainer.class .thumbnail.iconContainer,
-.widgetContainer .thumbnailContainer.event .thumbnail.iconContainer,
-.widgetContainer .thumbnailContainer.comment .thumbnail.iconContainer,
-.widgetContainer .thumbnailContainer.gallery .thumbnail.iconContainer,
-.widgetContainer .thumbnailContainer.contact .thumbnail.iconContainer,
-.widgetContainer .thumbnailContainer.staff .thumbnail.iconContainer,
-.widgetContainer .thumbnailContainer.resource .thumbnail.iconContainer {
+.widgetContainer .thumbnailContainer .thumbnail.iconContainer {
     width: 75px;
-    border-style: dashed;
 }
 
 .widgetContainer .thumbnailContainer.product .thumbnail.iconContainer {
@@ -850,16 +848,13 @@ ul.itemInfo li label {
     height: 33px;
 }
 
-.widgetContainer .thumbnailContainer.banner .thumbnail.iconContainer.add,
-.widgetContainer .thumbnailContainer.html .thumbnail.iconContainer.add,
-.widgetContainer .thumbnailContainer.filter .thumbnail.iconContainer.add,
-.widgetContainer .thumbnailContainer.class .thumbnail.iconContainer.add, 
-.widgetContainer .thumbnailContainer.event .thumbnail.iconContainer.add,
-.widgetContainer .thumbnailContainer.comment .thumbnail.iconContainer.add,
-.widgetContainer .thumbnailContainer.gallery .thumbnail.iconContainer.add,
-.widgetContainer .thumbnailContainer.contact .thumbnail.iconContainer.add,
-.widgetContainer .thumbnailContainer.staff .thumbnail.iconContainer.add,
-.widgetContainer .thumbnailContainer.resource .thumbnail.iconContainer.add {
+.widgetContainer .thumbnailContainer .thumbnail.iconContainer.add
+{
+    border-style: dashed;
+    height: 75px;
+}
+
+.widgetContainer .thumbnailContainer .thumbnail.iconContainer.add {
     padding: 23px;
     position: relative;
     display: inline-block;

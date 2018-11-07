@@ -1,11 +1,11 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPages/SiteMaster.master" AutoEventWireup="true" CodeFile="EditWithEmptyWidgets.aspx.cs" Inherits="Sections_Pages_EditWithWidgets" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPages/SiteMaster.master" AutoEventWireup="true" CodeFile="EditWithPopulatedWidgets.aspx.cs" Inherits="Sections_Pages_EditWithPopulatedWidgets" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <script type="text/javascript" src="../../Scripts/pageFunctions.js"></script>
     <script type="text/javascript" src="../../Scripts/resourceFunctions.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-        <div class="mainMenu">
+    <div class="mainMenu">
             <ul>
                 <li><img src="../../Images/Icons/framework.png" /><br />Framework</li>
                 <li class="selected"><img src="../../Images/Icons/content.png" alt="Content" /><br />Content</li>
@@ -100,12 +100,7 @@
                                     <div class="widgetContent" data-widget-type="single-banner">
                                         <div class="title">Single Banner</div>
                                         <div class="thumbnailContainer banner">
-                                            <div class="thumbnail iconContainer add">
-                                                <div class="top left"></div>
-                                                <div class="top right"></div>
-                                                <div class="bottom left"></div>
-                                                <div class="bottom right"></div>
-                                            </div>
+                                            <div class="thumbnail" style="background-image:url('/Images/Thumbnails/yin_yang_flowers.jpg')"></div>
                                         </div>
                                         <div class="widgetFooter" style="display: none;">
                                             <div class="iconContainer">

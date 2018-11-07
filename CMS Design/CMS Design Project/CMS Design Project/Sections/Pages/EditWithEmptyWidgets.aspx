@@ -156,6 +156,29 @@
                                     </div>
                                 </div>
                                 <!-- End Triple Banner Widget -->
+                                <!-- Scrolling Banner Widget -->
+                                <div class="widgetContainer">
+                                    <a href="javascript://" class="delete">X</a>
+                                    <div class="widgetContent" data-widget-type="scrolling-banner">
+                                        <div class="title">Scrolling Banner</div>
+                                        <div class="thumbnailContainer banner scrolling">
+                                            <div class="thumbnail iconContainer add">
+                                                <div class="top left"></div>
+                                                <div class="top right"></div>
+                                                <div class="bottom left"></div>
+                                                <div class="bottom right"></div>
+                                            </div>
+                                        </div>
+                                        <div class="widgetFooter">
+                                            <div class="iconContainer">
+                                                <a href="javascript://" class="icon">Edit</a>
+                                                <a href="javascript://" class="icon">Label</a>
+                                                <a href="javascript://" class="icon">Link</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Scrolling Banner Widget -->
                             </div>
                         </div>
                     </div>
@@ -167,10 +190,99 @@
                                 </div>
                             </div>
                             <div class="content">
+                                <!-- Filter Widget -->
                                 <div class="widgetContainer">
-                                    <div class="widgetHeader"></div>
-                                    <div class="htmlContainer"></div>
+                                    <div class="widgetHeader">
+                                        <a href="javascript://" class="delete">X</a>
+                                    </div>
+                                    <div class="widgetContent" data-widget-type="filter">
+                                        <div class="title">Filter</div>
+                                        <div class="thumbnailContainer filter">
+                                            <div class="thumbnail iconContainer add">
+                                                <div class="top left"></div>
+                                                <div class="top right"></div>
+                                                <div class="bottom left"></div>
+                                                <div class="bottom right"></div>
+                                            </div>
+                                        </div>
+                                        <div class="widgetFooter">
+                                            <div class="iconContainer">
+                                                <a href="javascript://" class="icon">Link</a>
+                                                <a href="javascript://" class="icon">Config</a>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
+                                <!-- End Filter Widget -->
+                                <!-- Class Widget -->
+                                <div class="widgetContainer">
+                                    <div class="widgetHeader">
+                                        <a href="javascript://" class="delete">X</a>
+                                    </div>
+                                    <div class="widgetContent" data-widget-type="classes">
+                                        <div class="title">Classes</div>
+                                        <div class="thumbnailContainer class">
+                                            <div class="thumbnail iconContainer add">
+                                                <div class="top left"></div>
+                                                <div class="top right"></div>
+                                                <div class="bottom left"></div>
+                                                <div class="bottom right"></div>
+                                            </div>
+                                        </div>
+                                        <div class="widgetFooter">
+                                            <div class="iconContainer">
+                                                <a href="javascript://" class="icon">Config</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Class Widget -->
+                                <!-- Contact List Widget -->
+                                <div class="widgetContainer">
+                                    <div class="widgetHeader">
+                                        <a href="javascript://" class="delete">X</a>
+                                    </div>
+                                    <div class="widgetContent" data-widget-type="contact_list">
+                                        <div class="title">Contact List</div>
+                                        <div class="thumbnailContainer contact">
+                                            <div class="thumbnail iconContainer add">
+                                                <div class="top left"></div>
+                                                <div class="top right"></div>
+                                                <div class="bottom left"></div>
+                                                <div class="bottom right"></div>
+                                            </div>
+                                        </div>
+                                        <div class="widgetFooter">
+                                            <div class="iconContainer">
+                                                <a href="javascript://" class="icon">Config</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Contact List Widget -->
+                                <!-- Staff List Widget -->
+                                <div class="widgetContainer">
+                                    <div class="widgetHeader">
+                                        <a href="javascript://" class="delete">X</a>
+                                    </div>
+                                    <div class="widgetContent" data-widget-type="staff_list">
+                                        <div class="title">Staff List</div>
+                                        <div class="thumbnailContainer staff">
+                                            <div class="thumbnail iconContainer add">
+                                                <div class="top left"></div>
+                                                <div class="top right"></div>
+                                                <div class="bottom left"></div>
+                                                <div class="bottom right"></div>
+                                            </div>
+                                        </div>
+                                        <div class="widgetFooter">
+                                            <div class="iconContainer">
+                                                <a href="javascript://" class="icon">Config</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Staff List Widget -->
                             </div>
                         </div>
                         <div class="columns eight section">
@@ -228,6 +340,28 @@
                                     </div>
                                 </div>
                                 <!-- End Product List Widget -->
+                                <!-- Gallery Widget -->
+                                <div class="widgetContainer">
+                                    <a href="javascript://" class="delete">X</a>
+                                    <div class="widgetContent" data-widget-type="gallery">
+                                        <div class="title">Gallery</div>
+                                        <div class="thumbnailContainer gallery">
+                                            <div class="thumbnail iconContainer add">
+                                                <div class="top left"></div>
+                                                <div class="top right"></div>
+                                                <div class="bottom left"></div>
+                                                <div class="bottom right"></div>
+                                            </div>
+                                        </div>
+                                        <div class="widgetFooter">
+                                            <div class="iconContainer">
+                                                <a href="javascript://" class="icon">Edit</a>
+                                                <a href="javascript://" class="icon">Label</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Gallery Widget -->
                             </div>
                         </div>
                         <div class="columns two section">
@@ -263,6 +397,29 @@
                                     </div>
                                 </div>
                                 <!-- End Data Widget -->
+                                <!-- Event Widget -->
+                                <div class="widgetContainer">
+                                    <div class="widgetHeader">
+                                        <a href="javascript://" class="delete">X</a>
+                                    </div>
+                                    <div class="widgetContent" data-widget-type="events">
+                                        <div class="title">Events</div>
+                                        <div class="thumbnailContainer event">
+                                            <div class="thumbnail iconContainer add">
+                                                <div class="top left"></div>
+                                                <div class="top right"></div>
+                                                <div class="bottom left"></div>
+                                                <div class="bottom right"></div>
+                                            </div>
+                                        </div>
+                                        <div class="widgetFooter">
+                                            <div class="iconContainer">
+                                                <a href="javascript://" class="icon">Config</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Event Widget -->
                             </div>
                         </div>
                     </div>
@@ -274,7 +431,52 @@
                                 </div>
                             </div>
                             <div class="content">
-
+                                <!-- Comments Widget -->
+                                <div class="widgetContainer">
+                                    <div class="widgetHeader">
+                                        <a href="javascript://" class="delete">X</a>
+                                    </div>
+                                    <div class="widgetContent" data-widget-type="comments">
+                                        <div class="title">Comments</div>
+                                        <div class="thumbnailContainer comment">
+                                            <div class="thumbnail iconContainer add">
+                                                <div class="top left"></div>
+                                                <div class="top right"></div>
+                                                <div class="bottom left"></div>
+                                                <div class="bottom right"></div>
+                                            </div>
+                                        </div>
+                                        <div class="widgetFooter">
+                                            <div class="iconContainer">
+                                                <a href="javascript://" class="icon">Config</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Comments Widget -->
+                                <!-- Resources Widget -->
+                                <div class="widgetContainer">
+                                    <div class="widgetHeader">
+                                        <a href="javascript://" class="delete">X</a>
+                                    </div>
+                                    <div class="widgetContent" data-widget-type="resources">
+                                        <div class="title">Resources</div>
+                                        <div class="thumbnailContainer resource">
+                                            <div class="thumbnail iconContainer add">
+                                                <div class="top left"></div>
+                                                <div class="top right"></div>
+                                                <div class="bottom left"></div>
+                                                <div class="bottom right"></div>
+                                            </div>
+                                        </div>
+                                        <div class="widgetFooter">
+                                            <div class="iconContainer">
+                                                <a href="javascript://" class="icon">Config</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Resources Widget -->
                             </div>
                         </div>
                     </div>

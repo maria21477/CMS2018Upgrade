@@ -693,7 +693,7 @@ ul.itemInfo li label {
 }
 
 .page .row.middle .columns.eight {
-    width: 64.34%;
+    width: 65.52%;
 }
 
 
@@ -811,7 +811,15 @@ ul.itemInfo li label {
 }
 
 .widgetContainer .thumbnailContainer.banner .thumbnail.iconContainer,
-.widgetContainer .thumbnailContainer.html .thumbnail.iconContainer {
+.widgetContainer .thumbnailContainer.html .thumbnail.iconContainer,
+.widgetContainer .thumbnailContainer.filter .thumbnail.iconContainer,
+.widgetContainer .thumbnailContainer.class .thumbnail.iconContainer,
+.widgetContainer .thumbnailContainer.event .thumbnail.iconContainer,
+.widgetContainer .thumbnailContainer.comment .thumbnail.iconContainer,
+.widgetContainer .thumbnailContainer.gallery .thumbnail.iconContainer,
+.widgetContainer .thumbnailContainer.contact .thumbnail.iconContainer,
+.widgetContainer .thumbnailContainer.staff .thumbnail.iconContainer,
+.widgetContainer .thumbnailContainer.resource .thumbnail.iconContainer {
     width: 75px;
     border-style: dashed;
 }
@@ -843,8 +851,15 @@ ul.itemInfo li label {
 }
 
 .widgetContainer .thumbnailContainer.banner .thumbnail.iconContainer.add,
-.widgetContainer .thumbnailContainer.html .thumbnail.iconContainer.add
-{
+.widgetContainer .thumbnailContainer.html .thumbnail.iconContainer.add,
+.widgetContainer .thumbnailContainer.filter .thumbnail.iconContainer.add,
+.widgetContainer .thumbnailContainer.class .thumbnail.iconContainer.add, 
+.widgetContainer .thumbnailContainer.event .thumbnail.iconContainer.add,
+.widgetContainer .thumbnailContainer.comment .thumbnail.iconContainer.add,
+.widgetContainer .thumbnailContainer.gallery .thumbnail.iconContainer.add,
+.widgetContainer .thumbnailContainer.contact .thumbnail.iconContainer.add,
+.widgetContainer .thumbnailContainer.staff .thumbnail.iconContainer.add,
+.widgetContainer .thumbnailContainer.resource .thumbnail.iconContainer.add {
     padding: 23px;
     position: relative;
     display: inline-block;

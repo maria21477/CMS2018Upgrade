@@ -761,6 +761,12 @@ ul.itemInfo li label {
     border: solid 2px #489890;
     border-radius: 5px;
 }
+.widgetContainer .widgetHeader .title {
+    padding: 20px 20px 0 20px;
+    color: #489890;
+    font-size: 1.2em;
+    text-align: center;
+}
 
 .widgetContainer .widgetContent {
     
@@ -789,7 +795,7 @@ ul.itemInfo li label {
     color: #489890;
 }
 
-.widgetContainer.selected a.delete {
+.widgetContainer.selected > a.delete {
     border-color: #6D348D;
     color: #6D348D;
 }
@@ -801,13 +807,24 @@ ul.itemInfo li label {
     margin-bottom: 40px;
 }
 
+.widgetContainer .thumbnailContainer .delete {
+    position: absolute;
+    font-size: 0.8em;
+}
+
 .widgetContainer .thumbnailContainer .thumbnail {
     border: solid 2px #489890;
     cursor: pointer;
+    position: relative;
 }
 
 .widgetContainer .thumbnailContainer .thumbnail.selected{
     border-color: #6D348D;
+}
+
+.widgetContainer .thumbnailContainer .thumbnail.selected a.delete {
+    border-color: #6D348D;
+    color: #6D348D;
 }
 
 .widgetContainer .thumbnailContainer.banner .thumbnail {
@@ -818,8 +835,11 @@ ul.itemInfo li label {
     background-position: center;
 }
 
-.widgetContainer .thumbnailContainer .thumbnail.iconContainer {
+.widgetContainer .thumbnailContainer .thumbnail.iconContainer .icon {
     width: 75px;
+    text-align: center;
+    position: relative;
+    display: inline-block
 }
 
 .widgetContainer .thumbnailContainer.product .thumbnail.iconContainer {
@@ -832,20 +852,37 @@ ul.itemInfo li label {
     padding-top: 40px;
 }
 
-.widgetContainer .thumbnailContainer.banner.triple.large .thumbnail
-{
-    height: 120px;
-    width: 200px;
+.widgetContainer .thumbnailContainer.banner.triple .thumbnail {
+    float: left;
 }
 
 .widgetContainer .thumbnailContainer.banner.triple.small
 {
-    width: 75px;
+    width: 178px;
+}
+
+.widgetContainer .thumbnailContainer.banner.triple.small .thumbnail:first-child {
+    margin-bottom: 7px;
 }
 
 .widgetContainer .thumbnailContainer.banner.triple.small .thumbnail
 {
-    height: 33px;
+    height: 72px;
+    width: 150px;
+    padding: 0;
+}
+
+.widgetContainer .thumbnailContainer.banner.triple.small .thumbnail.iconContainer.add {
+    height: 57px;
+    width: 131px;
+    padding-top: 10px;
+    padding-left: 20px;
+}
+
+.widgetContainer .thumbnailContainer.banner.scrolling .thumbnail {
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 20px;
 }
 
 .widgetContainer .thumbnailContainer .thumbnail.iconContainer.add
@@ -855,38 +892,26 @@ ul.itemInfo li label {
 }
 
 .widgetContainer .thumbnailContainer .thumbnail.iconContainer.add {
-    padding: 23px;
+    padding: 23px 0;
     position: relative;
     display: inline-block;
     cursor: pointer;
+    width: 125px;
 }
 
-.widgetContainer .thumbnailContainer .thumbnail.iconContainer.add div {
+.widgetContainer .thumbnailContainer.banner .thumbnail.iconContainer.add{
+    width: 266px;
+    height: 110px;
+    padding:40px 0 6px 0;
+}
+
+.widgetContainer .thumbnailContainer .thumbnail.iconContainer.add .icon div {
     height: 35px;
     width: 35px;
     float:left;
 }
 
-.widgetContainer .thumbnailContainer.banner.triple.large .thumbnail.iconContainer.add {
-    padding-left: 60px;
-    padding-right: 0;
-    padding-top: 11px;
-}
-
-.widgetContainer .thumbnailContainer.banner.triple.small .thumbnail.iconContainer.add {
-    padding-top: 10px;
-    padding-bottom: 30px;
-    padding-left: 40px;
-    padding-right: 20px;
-}
-
-.widgetContainer .thumbnailContainer.banner.triple.large .thumbnail.iconContainer.add div {
-    height: 66px;
-    width: 66px;
-    float:left;
-}
-
-.widgetContainer .thumbnailContainer.banner.triple.small .thumbnail.iconContainer.add div {
+.widgetContainer .thumbnailContainer.banner.triple.small .thumbnail.iconContainer.add .icon div {
     height: 25px;
     width: 25px;
     float:left;
@@ -912,7 +937,7 @@ ul.itemInfo li label {
     border-top: solid 1px #489890;
 }
 
-.widgetContainer .widgetContent .widgetFooter {
+.widgetContainer .widgetFooter {
     position: absolute;
     bottom: -1px;
     left: -1px;
@@ -925,12 +950,12 @@ ul.itemInfo li label {
     border: solid 1px #489890;
 }
 
-.widgetContainer.selected .widgetContent .widgetFooter {
+.widgetContainer.selected .widgetFooter {
     background-color: #6D348D;
     border: solid 1px #6D348D;
 }
 
-.widgetContainer .widgetContent .widgetFooter .iconContainer a {
+.widgetContainer .widgetFooter .iconContainer a {
     color: #fff;
     margin-right: 20px
 }

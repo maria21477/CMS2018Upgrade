@@ -259,10 +259,12 @@ var widgetFunctions = new function () {
 
                 case 'html':
 
-                    widgetFunctions.ConfigureHtmlWidget($(this));
+                    widgetFunctions.ConfigureHtmlWidget($(this).parents('.widgetContent'));
                     break;
 
                 case 'single-banner':
+                case 'triple-banner':
+                case 'scrolling-banner':
                     overlayParams = {};
                     overlayParams.Content = $('#divResourceOverlay').html();
                     overlayParams.Callback = function () {
@@ -270,6 +272,7 @@ var widgetFunctions = new function () {
                     }
                     overlay.Open(overlayParams);
                     break;
+
             }
 
         });
@@ -279,6 +282,9 @@ var widgetFunctions = new function () {
             // Remove highlighting from any other highlighted widgets
             $('.widgetContainer').removeClass('selected');
             $('.widgetContent .thumbnailContainer .thumbnail.selected').removeClass('selected');
+
+            // Remove displayed options
+            $('.widgetFooter').not('.permanent').hide();
 
             // Highlight item and widget
             $(this).addClass('selected');

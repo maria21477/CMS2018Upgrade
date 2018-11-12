@@ -291,7 +291,7 @@ var widgetFunctions = new function () {
             $(this).parents('.widgetContainer').addClass('selected');
 
             // Show options
-            $(this).parents('.widgetContent').children('.widgetFooter').show();
+            $(this).parents('.widgetContent').siblings('.widgetFooter').show();
             
 
         });

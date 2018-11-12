@@ -100,8 +100,8 @@
                                         <a href="javascript://" class="delete">X</a>
                                         <div class="title">Single Banner</div>
                                     </div>
-                                    <div class="widgetContent" data-widget-type="single-banner">
-                                        <div class="thumbnailContainer banner">
+                                    <div class="widgetContent empty banner" data-widget-type="single-banner">
+                                        <div class="thumbnailContainer">
                                             <div class="thumbnail add iconContainer">
                                                 <div class="icon">
                                                     <div class="top left"></div>
@@ -127,8 +127,8 @@
                                         <a href="javascript://" class="delete">X</a>
                                         <div class="title">Triple Banner</div>
                                     </div>
-                                    <div class="widgetContent" data-widget-type="triple-banner">
-                                        <div class="thumbnailContainer banner triple large">
+                                    <div class="widgetContent empty banner" data-widget-type="triple-banner">
+                                        <div class="thumbnailContainer triple large">
                                             <div class="thumbnail iconContainer add">
                                                 <div class="icon">
                                                     <div class="top left"></div>
@@ -138,7 +138,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="thumbnailContainer banner triple small">
+                                        <div class="thumbnailContainer triple small">
                                             <div class="thumbnail iconContainer add">
                                                 <div class="icon">
                                                     <div class="top left"></div>
@@ -173,8 +173,8 @@
                                         <a href="javascript://" class="delete">X</a>
                                         <div class="title">Scrolling Banner</div>
                                     </div>
-                                    <div class="widgetContent" data-widget-type="scrolling-banner">
-                                        <div class="thumbnailContainer banner scrolling">
+                                    <div class="widgetContent empty banner" data-widget-type="scrolling-banner">
+                                        <div class="thumbnailContainer scrolling">
                                             <div class="thumbnail iconContainer add">
                                                 <div class="icon">
                                                     <div class="top left"></div>
@@ -211,7 +211,7 @@
                                         <a href="javascript://" class="delete">X</a>
                                         <div class="title">Filter</div>
                                     </div>
-                                    <div class="widgetContent" data-widget-type="filter">
+                                    <div class="widgetContent empty" data-widget-type="filter">
                                         <div class="thumbnailContainer filter">
                                             <div class="thumbnail iconContainer add">
                                                 <div class="icon">
@@ -237,7 +237,7 @@
                                         <a href="javascript://" class="delete">X</a>
                                         <div class="title">Classes</div>
                                     </div>
-                                    <div class="widgetContent" data-widget-type="classes">
+                                    <div class="widgetContent empty" data-widget-type="classes">
                                         <div class="thumbnailContainer class">
                                             <div class="thumbnail iconContainer add">
                                                 <div class="icon">
@@ -262,7 +262,7 @@
                                         <a href="javascript://" class="delete">X</a>
                                         <div class="title">Contact List</div>
                                     </div>
-                                    <div class="widgetContent" data-widget-type="contact_list">
+                                    <div class="widgetContent empty" data-widget-type="contact_list">
                                         <div class="thumbnailContainer contact">
                                             <div class="thumbnail iconContainer add">
                                                 <div class="icon">
@@ -287,7 +287,7 @@
                                         <a href="javascript://" class="delete">X</a>
                                         <div class="title">Staff List</div>
                                     </div>
-                                    <div class="widgetContent" data-widget-type="staff_list">
+                                    <div class="widgetContent empty" data-widget-type="staff_list">
                                         <div class="thumbnailContainer staff">
                                             <div class="thumbnail iconContainer add">
                                                 <div class="icon">
@@ -321,7 +321,7 @@
                                         <a href="javascript://" class="delete">X</a>
                                         <div class="title">Html Content</div>
                                     </div>
-                                    <div class="widgetContent" data-widget-type="html">
+                                    <div class="widgetContent empty" data-widget-type="html">
                                         <div class="thumbnailContainer html">
                                             <div class="thumbnail iconContainer add">
                                                 <div class="icon">
@@ -346,7 +346,7 @@
                                         <a href="javascript://" class="delete">X</a>
                                         <div class="title">Product List Widget</div>
                                     </div>
-                                    <div class="widgetContent" data-widget-type="product-list">
+                                    <div class="widgetContent empty" data-widget-type="product-list">
                                         <div class="thumbnailContainer product">
                                             <div class="thumbnail iconContainer">
                                                 <p>Paged List</p>
@@ -371,7 +371,7 @@
                                         <a href="javascript://" class="delete">X</a>
                                         <div class="title">Gallery</div>
                                     </div>
-                                    <div class="widgetContent" data-widget-type="gallery">
+                                    <div class="widgetContent empty" data-widget-type="gallery">
                                         <div class="thumbnailContainer gallery">
                                             <div class="thumbnail iconContainer add">
                                                 <div class="icon">
@@ -406,7 +406,7 @@
                                         <a href="javascript://" class="delete">X</a>
                                         <div class="title">Data Widget</div>
                                     </div>
-                                    <div class="widgetContent" data-widget-type="data">
+                                    <div class="widgetContent empty" data-widget-type="data">
                                         <div class="thumbnailContainer product">
                                             <div class="thumbnail iconContainer">
                                                 <p>Product</p>
@@ -432,7 +432,7 @@
                                         <a href="javascript://" class="delete">X</a>
                                         <div class="title">Events</div>
                                     </div>
-                                    <div class="widgetContent" data-widget-type="events">
+                                    <div class="widgetContent empty" data-widget-type="events">
                                         <div class="thumbnailContainer event">
                                             <div class="thumbnail iconContainer add">
                                                 <div class="icon">
@@ -468,7 +468,7 @@
                                         <a href="javascript://" class="delete">X</a>
                                         <div class="title">Comments</div>
                                     </div>
-                                    <div class="widgetContent" data-widget-type="comments">
+                                    <div class="widgetContent empty" data-widget-type="comments">
                                         <div class="thumbnailContainer comment">
                                             <div class="thumbnail iconContainer add">
                                                 <div class="icon">
@@ -493,7 +493,7 @@
                                         <a href="javascript://" class="delete">X</a>
                                         <div class="title">Resources</div>
                                     </div>
-                                    <div class="widgetContent" data-widget-type="resources">
+                                    <div class="widgetContent empty" data-widget-type="resources">
                                         <div class="thumbnailContainer resource">
                                             <div class="thumbnail iconContainer add">
                                                 <div class="icon">
